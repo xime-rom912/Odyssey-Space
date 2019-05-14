@@ -63,12 +63,13 @@ void cuartelMilitar (){
         cout<<"Pero mas importante me ha dado la localización de los rehenes, el apenas escapo de ahí no esta lejos puedo recuperar a mi familia pronto!"<<endl;
         cout<<"Si pierdo tiempo en ir a buscar las armas podrian re localizar el campo de concentracion y de nuevo no sabria donde buscar, de poco me servirian"<<endl;
         cout<<"¿Que decides hacer?"<<endl;
-        cout<<"Ir por armas (presiona 1)" <<  "Ir por los rehenes (presiona 2)"
+        cout<<"Ir por armas (presiona 1)" <<  "Ir por los rehenes (presiona 2)";
         if (choice==2){
             cout<<"Has ido a rescatar rehenes, te acercas a tu meta pero tu falta de euipamiento te hace morir en la tarea"<<endl;
             
         }
     }
+}
 int main()
 {
 	cout << "----------------Odyssey Space---------------" << endl;
