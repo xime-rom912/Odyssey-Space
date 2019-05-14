@@ -67,20 +67,20 @@ void cuartelMilitar (){
 
 int buscarTuMismo()
 {
-    int eleccion;
+    int acceso;
     cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has enterado de la cruda verdad"<<endl;
     cout<<"Una extrana raza de extraterrestres ha invadido el planeta mientras estas ausente y ha exlavizado a la mayoria de los humanos en la tierra"<<endl;
     cout<<"incluyendo a tu familia..."<<endl;
     cout<<"\nSales desconcertado de la sala y justo afuera te encuentras con un alien enemigo que esta distraido"<<endl;
     cout<<"\n¿Que decides hacer?"<<endl;
     cout<<"Te escabulles lentamente sin que te vea hacia la armeria (presiona 1)    "<<"Te dejas llevar por tu enojo y lo atacas (presiona 2)"<<endl;
-    cin>> eleccion;
-    if (eleccion == 1){
+    int acceso = ValidarEntrada();
+    if (acceso == 1){
         //Llamar a funcion de armeria  (borrar cout de abajo...)
         cout <<"te diriges a la armeria..."<<endl;
     }
 
-    if (eleccion==2){
+    if (acceso == 2){
             cout<<"Te acercas lentamente a tu enemigo por detras, pero por accidente tiras un par de cajas causando lago de ruido"<<endl;
             cout<<"esto hace que se de cuenta de tu presencia y te ataca tambien"<<endl;
             cout<<"Te golpea fuertemente empujandote hacia una esquina en donde encuentras un viejo tubo oxidado, el cual tomas para defenderte"<<endl;
