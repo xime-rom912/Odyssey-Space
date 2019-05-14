@@ -2,6 +2,8 @@
 #include <windows.h>
 #include <string>
 #include <assert.h>
+#include <conio.h>
+
 using namespace std;
 
 int ValidarEntrada();
