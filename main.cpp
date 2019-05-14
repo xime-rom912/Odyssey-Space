@@ -69,14 +69,15 @@ void cuartelMilitar (){
 
 	}
 	else{
-         cout<<"Has ido a rescatar rehenes, te acercas a tu meta pero tu falta de euipamiento te hace morir en la tarea"<<endl;
+         //cout<<"Has ido a rescatar rehenes, te acercas a tu meta pero tu falta de euipamiento te hace morir en la tarea"<<endl;
+	 buscarTuMismo();	
 	}
 
 }
 
 int buscarTuMismo()
 {
-    int acceso;
+   
     cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has enterado de la cruda verdad"<<endl;
     cout<<"Una extrana raza de extraterrestres ha invadido el planeta mientras estas ausente y ha exlavizado a la mayoria de los humanos en la tierra"<<endl;
     cout<<"incluyendo a tu familia..."<<endl;
