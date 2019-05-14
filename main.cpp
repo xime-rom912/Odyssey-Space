@@ -70,7 +70,7 @@ int main()
 	cout << "Tu respuesta es: ";
 	//cin >> opci;
 	int acceso = ValidarEntrada();
-	aseert(aceso == 1)
+	assert(acceso == 1)
 	if (acceso == 1 || acceso == 2) {
 		nombre();
 	}
