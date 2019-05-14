@@ -70,7 +70,7 @@ int main()
 	cout << "Tu respuesta es: ";
 	//cin >> opci;
 	int acceso = ValidarEntrada();
-	assert(acceso == 1)
+	assert(acceso == 1);
 	if (acceso == 1 || acceso == 2) {
 		nombre();
 	}
@@ -96,7 +96,7 @@ int ValidarEntrada() {
 		int validacion = isValidInt(eleccionCadena);
 		try {
 			if (validacion != 0) {
-				string::size_type sz;
+				//string::size_type sz;
 				eleccionEntero = stoi(eleccionCadena); //&sz
 				if (eleccionEntero >= 1 && eleccionEntero <= 2) {
 					if (eleccionEntero == 1) {
