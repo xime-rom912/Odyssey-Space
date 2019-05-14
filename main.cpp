@@ -48,8 +48,8 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 void nombre() {
 	string nombre;
 	cout << "Escribe tu nombre por favor: ";
-	cin >> nombre;
-	introduc(nombre);
+	cin >> Character1.nombre;
+	introduc(Character1.nombre);
 }
 void cuartelMilitar (){
     int choice;
