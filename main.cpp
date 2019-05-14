@@ -16,8 +16,8 @@ struct Personaje{
     
 }Character1;
 
-void introduc(string nomb_usu) {
-	system("cls");//borrar consola
+void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
+	system("cls");//borra lo escrito en la consola
 	cout << "\tTe damos la bienvenida " << nomb_usu << "\nEres un vajero espacial asignado a una mision de exploracion en el planeta X910,"
 		<< "al volver a la tierra despues de la larga mision, te das cuenta de que ha sido atacada por una raza de alienigenas "
 		<< "lengendarios y ancestrales. Al ir a buscar a tu familia te enteras de que han sido raptados y no hay ningun rastro de ellos. "
@@ -104,7 +104,7 @@ int ValidarEntrada() {
 		try {
 			if (validacion != 0) {
 				string::size_type sz;
-				eleccionEntero = stoi(eleccionCadena, &sz);
+				eleccionEntero = stoi(eleccionCadena); //&sz
 				if (eleccionEntero >= 1 && eleccionEntero <= 2) {
 					if (eleccionEntero == 1) {
 						return 1;
