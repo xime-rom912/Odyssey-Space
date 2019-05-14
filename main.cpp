@@ -71,17 +71,12 @@ int main()
 	cout << "\n\t1. Iniciar juego" << endl;
 	cout << "\t2. Salir" << endl;
 	cout << "Tu respuesta es: ";
-	//cin >> opci;
 	int acceso = ValidarEntrada();
-	assert(acceso == 1);
-	if (acceso == 1 || acceso == 2) {
+	if (acceso == 1) {
 		nombre();
+	}else{
+	    cout<<"Gracias por jugar Odyssey Space";
 	}
-
-	//switch (opci) {
-	//case 1:
-		//nombre();
-	//}
 
 	return 0;
 }
