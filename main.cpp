@@ -5,7 +5,16 @@ using namespace std;
 
 int ValidarEntrada();
 bool isValidInt(string numeroEnCadena);
+void cuartelMilitar ();
 int opci = 0;
+
+struct Personaje{
+
+    string nombre;
+    int vida = 100;
+    int arma = 25;
+    
+}Character1;
 
 void introduc(string nomb_usu) {
 	system("cls");//borrar consola
@@ -23,6 +32,16 @@ void introduc(string nomb_usu) {
 	else {
 		cout << "(ejemplo)opcion 2 escogida" << endl;
 	}
+	switch (opci){
+   	case 1:
+		cuartelMilitar();
+        /* code */
+        break;
+    	case 2: 
+        	cout<<"\nLa verdad ya que se le puede hacer, mejor vive tu vida en otro planeta.\n";
+        break;
+
+    }
 
 }
 
