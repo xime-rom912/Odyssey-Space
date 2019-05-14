@@ -26,8 +26,8 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 		<< "\n1. Ir al cuartel militar."
 		<< "\n2. Llorar y no hacer nada";
 	//cin >> opci;
-	int aceso = ValidarEntrada();
-	if (aceso == 1) {
+	int acceso = ValidarEntrada();
+	if (acceso == 1) {
 		cuartelMilitar();;
 	}
 	else {
@@ -69,9 +69,9 @@ int main()
 	cout << "\t2. Salir" << endl;
 	cout << "Tu respuesta es: ";
 	//cin >> opci;
-	int aceso = ValidarEntrada();
+	int acceso = ValidarEntrada();
 	aseert(aceso == 1)
-	if (aceso == 1 || aceso == 2) {
+	if (acceso == 1 || acceso == 2) {
 		nombre();
 	}
 
