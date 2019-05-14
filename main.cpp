@@ -83,7 +83,8 @@ int main()
 	return 0;
 }
 
-
+//Esta función recibe un entero que le permite identificar la 
+//opción seleccionada una vez de haber pasado por la validacion de cadena o entero
 int ValidarEntrada() {
 
 	string eleccionCadena;
@@ -121,7 +122,7 @@ int ValidarEntrada() {
 		}
 	} while (key != true);
 }
-
+//Esta función determina si los valores ingresados son enteros o cadenas de texto 
 bool isValidInt(string numeroEnCadena) {
 	int inicio = 0;
 	int i = 0;
