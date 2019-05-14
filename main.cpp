@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <string>
+#include <assert.h>
 using namespace std;
 
 int ValidarEntrada();
@@ -25,8 +26,8 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 		<< "\n1. Ir al cuartel militar."
 		<< "\n2. Llorar y no hacer nada";
 	//cin >> opci;
-	int Acceso = ValidarEntrada();
-	if (Acceso == 1) {
+	int aceso = ValidarEntrada();
+	if (aceso == 1) {
 		cuartelMilitar();;
 	}
 	else {
@@ -68,8 +69,9 @@ int main()
 	cout << "\t2. Salir" << endl;
 	cout << "Tu respuesta es: ";
 	//cin >> opci;
-	int Acceso = ValidarEntrada();
-	if (Acceso == 1 || Acceso == 2) {
+	int aceso = ValidarEntrada();
+	aseert(aceso == 1)
+	if (aceso == 1 || aceso == 2) {
 		nombre();
 	}
 
