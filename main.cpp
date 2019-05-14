@@ -9,6 +9,7 @@ using namespace std;
 int ValidarEntrada();
 bool isValidInt(string numeroEnCadena);
 void cuartelMilitar ();
+int buscarTuMismo();
 int opci = 0;
 
 struct Personaje{
@@ -16,7 +17,7 @@ struct Personaje{
     string nombre;
     int vida = 100;
     int arma = 25;
-    
+
 }Character1;
 
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
@@ -48,8 +49,8 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 void nombre() {
 	string nombre;
 	cout << "Escribe tu nombre por favor: ";
-	cin >> Character1.nombre;
-	introduc(Character1.nombre);
+	cin >> nombre;
+	introduc(nombre);
 }
 void cuartelMilitar (){
     int choice;
@@ -65,19 +66,19 @@ void cuartelMilitar (){
         cout<<"Pero mas importante me ha dado la localización de los rehenes, el apenas escapo de ahí no esta lejos puedo recuperar a mi familia pronto!"<<endl;
         cout<<"Si pierdo tiempo en ir a buscar las armas podrian re localizar el campo de concentracion y de nuevo no sabria donde buscar, de poco me servirian"<<endl;
         cout<<"¿Que decides hacer?"<<endl;
-        cout<<"Ir por armas (presiona 1)" <<  "Ir por los rehenes (presiona 2)";
+        cout<<"\n1.Ir por armas" <<  "\n2.Ir por los rehenes";
 
 	}
 	else{
          //cout<<"Has ido a rescatar rehenes, te acercas a tu meta pero tu falta de euipamiento te hace morir en la tarea"<<endl;
-	 buscarTuMismo();	
+	 buscarTuMismo();
 	}
 
 }
 
 int buscarTuMismo()
 {
-   
+
     cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has enterado de la cruda verdad"<<endl;
     cout<<"Una extrana raza de extraterrestres ha invadido el planeta mientras estas ausente y ha exlavizado a la mayoria de los humanos en la tierra"<<endl;
     cout<<"incluyendo a tu familia..."<<endl;
@@ -121,7 +122,7 @@ int main()
 	return 0;
 }
 
-//Esta función recibe un entero que le permite identificar la 
+//Esta función recibe un entero que le permite identificar la
 //opción seleccionada una vez de haber pasado por la validacion de cadena o entero
 int ValidarEntrada() {
 
@@ -160,7 +161,7 @@ int ValidarEntrada() {
 		}
 	} while (key != true);
 }
-//Esta función determina si los valores ingresados son enteros o cadenas de texto 
+//Esta función determina si los valores ingresados son enteros o cadenas de texto
 bool isValidInt(string numeroEnCadena) {
 	int inicio = 0;
 	int i = 0;
@@ -184,4 +185,3 @@ bool isValidInt(string numeroEnCadena) {
 	}
 	return valido;
 }
-
