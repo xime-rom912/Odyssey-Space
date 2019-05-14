@@ -18,24 +18,31 @@ struct Personaje{
 }Character1;
 
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
-	system("cls");//borra lo escrito en la consola
-	cout << "\tTe damos la bienvenida " << nomb_usu << "\nEres un vajero espacial asignado a una mision de exploracion en el planeta X910,"
-		<< "al volver a la tierra despues de la larga mision, te das cuenta de que ha sido atacada por una raza de alienigenas "
-		<< "lengendarios y ancestrales. Al ir a buscar a tu familia te enteras de que han sido raptados y no hay ningun rastro de ellos. "
-		<< "La decision es tuya, puedes formar tu destino para lograr rescatar a tu esposa e hija. Que decides hacer?"
-		<< "\n1. Ir al cuartel militar."
-		<< "\n2. Llorar y no hacer nada";
-	//cin >> opci;
-	int acceso = ValidarEntrada();
-	if (acceso == 1) {
-		cuartelMilitar();;
-	}
-	else {
-		cout<<"\nLa verdad ya que se le puede hacer, mejor vive tu vida en otro planeta.\n";
-	}
+    system("cls");
+    cout<<"\t\t\tInstrucciones: "
+        <<"\nLee atentamente la historia que aparece y toma tu desicion sabiamente."
+        <<"\nDigita el numero correspondiente a cada mision"
+        <<"\nEso es todo, esperamos que disfrutes el juego."
+        <<"\n-Presiona cualquier tecla para seguir-"<<endl;
+    if(getch()){
+        system("cls");//borra lo escrito en la consola
+        cout << "\tTe damos la bienvenida " << nomb_usu << "\nEres un vajero espacial asignado a una mision de exploracion en el planeta X910,"
+            << "al volver a la tierra despues de la larga mision, te das cuenta de que ha sido atacada por una raza de alienigenas "
+            << "lengendarios y ancestrales. Al ir a buscar a tu familia te enteras de que han sido raptados y no hay ningun rastro de ellos. "
+            << "La decision es tuya, puedes formar tu destino para lograr rescatar a tu esposa e hija. Que decides hacer?"
+            << "\n1. Ir al cuartel militar."
+            << "\n2. Llorar y no hacer nada."
+            << "\n\nTu desicion: ";
+        int acceso = ValidarEntrada();
+        if (acceso == 1) {
+            cuartelMilitar();;
+        }
+        else {
+            cout<<"\nLa verdad ya que se le puede hacer, mejor vive tu vida en otro planeta.\n";
+        }
 
     }
-
+}
 void nombre() {
 	string nombre;
 	cout << "Escribe tu nombre por favor: ";
