@@ -49,7 +49,7 @@ void cuartelMilitar (){
     cout<<"Ayudar al moribundo (presiona 1)"<<   "Seguir por tu cuenta(presiona 2)"<<endl;
     //cin>> choice;
     int acceso = ValidarEntrada();
-	if (acceso == 1 || acceso == 2) {
+	if (acceso == 1) {
 
 		cout <<"Wow, el moribundo ha probado ser realmente util, parece ser un militar retirado o algo asi"<<endl;
         cout<<"Me ha dado informacion valiosa, me ha dicho donde esconde su arsenal lo que queda de la humanidad"<<endl;
