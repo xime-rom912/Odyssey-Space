@@ -27,19 +27,11 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 	//cin >> opci;
 	int Acceso = ValidarEntrada();
 	if (Acceso == 1) {
-		cout << "(ejemplo)opcion 1 escogida" << endl;
+		cuartelMilitar();;
 	}
 	else {
-		cout << "(ejemplo)opcion 2 escogida" << endl;
+		cout<<"\nLa verdad ya que se le puede hacer, mejor vive tu vida en otro planeta.\n";
 	}
-	switch (opci){
-   	case 1:
-		cuartelMilitar();
-        /* code */
-        break;
-    	case 2: 
-        	cout<<"\nLa verdad ya que se le puede hacer, mejor vive tu vida en otro planeta.\n";
-        break;
 
     }
 
