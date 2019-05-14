@@ -35,8 +35,6 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 
     }
 
-}
-
 void nombre() {
 	string nombre;
 	cout << "Escribe tu nombre por favor: ";
