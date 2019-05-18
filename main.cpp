@@ -16,7 +16,7 @@ struct Personaje{
 
     string nombre;
     int vida = 100;
-    int arma = 500000;
+    int arma = 20;
 
 }Character1;
 
