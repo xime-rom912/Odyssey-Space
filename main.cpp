@@ -272,3 +272,4 @@ bool isValidInt(string numeroEnCadena) {
 			valido = false;
 	}
 	return valido;
+}
