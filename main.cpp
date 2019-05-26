@@ -103,11 +103,12 @@ int buscarTuMismo()
             //Llamar funcion de armeria
 
     }
+	return 0;
 }
 
 int main()
 {
-	cout << "----------------Odyssey Space---------------" << endl;
+	cout << "----------------SPACE ODYSSEY---------------" << endl;
 	cout << "\tMenu" << endl;
 	cout << "\n\t1. Iniciar juego" << endl;
 	cout << "\t2. Salir" << endl;
@@ -160,6 +161,7 @@ int ValidarEntrada() {
 			cout << "Seleccione la opcion 1 o 2" << endl;
 		}
 	} while (key != true);
+	return 0;
 }
 //Esta función determina si los valores ingresados son enteros o cadenas de texto
 bool isValidInt(string numeroEnCadena) {
