@@ -137,6 +137,7 @@ int buscarTuMismo()
 
 int main()
 {
+	system("color 8B");//Cambia el color de la consola 
 	cout << "----------------Odyssey Space---------------" << endl;
 	cout << "\tMenu" << endl;
 	cout << "\n\t1. Iniciar juego" << endl;
