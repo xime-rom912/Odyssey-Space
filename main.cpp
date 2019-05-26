@@ -7,10 +7,12 @@
 using namespace std;
 
 int ValidarEntrada();
-bool isValidInt(string numeroEnCadena);
+bool isValidInt(string);
 void cuartelMilitar ();
+void armeria();
 int buscarTuMismo();
 int opci = 0;
+int acceso;
 
 struct Personaje{
 
@@ -20,6 +22,30 @@ struct Personaje{
 
 }Character1;
 
+void g_over(){
+    system("cls");
+    system("color 0C");
+    cout<<"                          GAME OVER";
+}
+
+void armeria(){
+    system("cls");
+    cout<<"Sales del cuartel armado hasta las chanclas"
+        <<"\nQue decides?"
+        <<"\n1.Subes a tu nave" << "\n2.Subes a la nave alinigena"
+        << "\n\nTu desicion: ";
+    acceso = ValidarEntrada();
+    if (acceso == 1) {
+        system("cls");
+        cout<<"Te diriges a la base, descubren tu nave, abren fuego y mueres"
+            <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+        if(getch())
+            g_over();
+    }
+    else {
+        //nave alienigena
+    }
+}
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
     system("cls");
     cout<<"\t\t\tInstrucciones: "
@@ -30,18 +56,23 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
     if(getch()){
         system("cls");//borra lo escrito en la consola
         cout << "\tTe damos la bienvenida " << nomb_usu << "\nEres un vajero espacial asignado a una mision de exploracion en el planeta X910,"
-            << "al volver a la tierra despues de la larga mision, te das cuenta de que ha sido atacada por una raza de alienigenas "
-            << "lengendarios y ancestrales. Al ir a buscar a tu familia te enteras de que han sido raptados y no hay ningun rastro de ellos. "
-            << "La decision es tuya, puedes formar tu destino para lograr rescatar a tu esposa e hija. Que decides hacer?"
+            << "\nal volver a la tierra despues de la larga mision, te das cuenta de que ha sido atacada por una raza de alienigenas "
+            << "\nlengendarios y ancestrales. Al ir a buscar a tu familia te enteras de que han sido raptados"
+            << "\ny no hay ningun rastro de ellos. La decision es tuya, puedes formar tu destino para lograr rescatar a tu esposa e hija."
+            << "\nQue decides hacer?"
             << "\n1. Ir al cuartel militar."
             << "\n2. Llorar y no hacer nada."
             << "\n\nTu desicion: ";
-        int acceso = ValidarEntrada();
+        acceso = ValidarEntrada();
         if (acceso == 1) {
             cuartelMilitar();;
         }
         else {
-            cout<<"\nLa verdad ya que se le puede hacer, mejor vive tu vida en otro planeta.\n";
+            system("cls");
+            cout<<"La verdad ya que se le puede hacer, mejor vive tu vida en otro planeta."
+                <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+            if(getch())
+                g_over();
         }
 
     }
@@ -53,55 +84,67 @@ void nombre() {
 	introduc(nombre);
 }
 void cuartelMilitar (){
+    system("cls");
     int choice;
-    cout<<"En el cuartel militar hay un sujeto moribundo, puedes pedirle ayuda, pero su condición podria causarte nada mas que problemas"<<endl;
-    cout<<"Que decides hacer"<<endl;
-    cout<<"Ayudar al moribundo (presiona 1)"<<   "Seguir por tu cuenta(presiona 2)"<<endl;
+    cout<<"En el cuartel militar hay un sujeto moribundo, puedes pedirle ayuda, pero su condicion podria causarte"
+        <<"\nnada mas que problemas"
+        <<"\nQue decides hacer?"
+        <<"\n1.Ayudar al moribundo"<<   "\n2.Seguir por tu cuenta"
+        <<"\n\nTu desicion: ";
     //cin>> choice;
-    int acceso = ValidarEntrada();
+    acceso = ValidarEntrada();
 	if (acceso == 1) {
-
-		cout <<"Wow, el moribundo ha probado ser realmente util, parece ser un militar retirado o algo asi"<<endl;
-        cout<<"Me ha dado informacion valiosa, me ha dicho donde esconde su arsenal lo que queda de la humanidad"<<endl;
-        cout<<"Pero mas importante me ha dado la localización de los rehenes, el apenas escapo de ahí no esta lejos puedo recuperar a mi familia pronto!"<<endl;
-        cout<<"Si pierdo tiempo en ir a buscar las armas podrian re localizar el campo de concentracion y de nuevo no sabria donde buscar, de poco me servirian"<<endl;
-        cout<<"¿Que decides hacer?"<<endl;
-        cout<<"\n1.Ir por armas" <<  "\n2.Ir por los rehenes";
-
-	}
-	else{
-         //cout<<"Has ido a rescatar rehenes, te acercas a tu meta pero tu falta de euipamiento te hace morir en la tarea"<<endl;
-	 buscarTuMismo();
+        system("cls");
+		cout <<"Wow, el moribundo ha probado ser realmente util, parece ser un militar retirado o algo asi"
+            <<"\nMe ha dado informacion valiosa, me ha dicho donde esconde su arsenal lo que queda de la humanidad"
+            <<"\nPero mas importante me ha dado la localización de los rehenes, el apenas escapo de ahí no esta lejos"
+            <<"\npuedo recuperar a mi familia pronto! Si pierdo tiempo en ir a buscar las armas podrian"
+            <<"\nre localizar el campo de concentracion y de nuevo no sabria donde buscar, de poco me servirian"
+            <<"\nQue decides hacer?"
+            <<"\n1.Ir por armas" <<  "\n2.Ir por los rehenes"
+            <<"\n\nTu desicion: ";
+        acceso = ValidarEntrada();
+        if (acceso == 1) {
+            system("cls");
+            armeria();
+        } else {
+            system("cls");
+            cout<<"Mueres por la falta de armas para defenderte"
+                <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+            if(getch())
+                g_over();
+        }
+	}else{
+        buscarTuMismo();
 	}
 
 }
 
 int buscarTuMismo()
 {
-
-    cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has enterado de la cruda verdad"<<endl;
-    cout<<"Una extrana raza de extraterrestres ha invadido el planeta mientras estas ausente y ha exlavizado a la mayoria de los humanos en la tierra"<<endl;
-    cout<<"incluyendo a tu familia..."<<endl;
-    cout<<"\nSales desconcertado de la sala y justo afuera te encuentras con un alien enemigo que esta distraido"<<endl;
-    cout<<"\n¿Que decides hacer?"<<endl;
-    cout<<"Te escabulles lentamente sin que te vea hacia la armeria (presiona 1)    "<<"Te dejas llevar por tu enojo y lo atacas (presiona 2)"<<endl;
-    int acceso = ValidarEntrada();
+    system("cls");
+    cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has"
+        <<"\nenterado de la cruda verdad. Una extrana raza de extraterrestres ha invadido el planeta mientras"
+        <<"\nestas ausente y ha exlavizado a la mayoria de los humanos en la tierra"
+        <<"\nincluyendo a tu familia..."
+        <<"\nSales desconcertado de la sala y justo afuera te encuentras con un alien enemigo que esta distraido"
+        <<"\nQue decides hacer?"
+        <<"\n1.Te escabulles lentamente sin que te vea hacia la armeria"<<"\n2.Te dejas llevar por tu enojo y lo atacas"
+        <<"\n\nTu desicion: ";
+    acceso = ValidarEntrada();
     if (acceso == 1){
-        //Llamar a funcion de armeria  (borrar cout de abajo...)
-        cout <<"te diriges a la armeria..."<<endl;
-    }
-
-    if (acceso == 2){
-            cout<<"Te acercas lentamente a tu enemigo por detras, pero por accidente tiras un par de cajas causando lago de ruido"<<endl;
-            cout<<"esto hace que se de cuenta de tu presencia y te ataca tambien"<<endl;
-            cout<<"Te golpea fuertemente empujandote hacia una esquina en donde encuentras un viejo tubo oxidado, el cual tomas para defenderte"<<endl;
-            cout<<"Tu enemigo se abalanza hacia ti para acabar contigo, pero logras esquivarlo y le clavas el tubo por la espalda eliminandolo"<<endl;
-            cout<<"\nHas vencido, pero has treminado herido..."<<endl;
-            cout<<"Perdiste      puntos de vida"<<endl;
-                          // x
-            cout<<"\nAhora te diriges hacia la armeria en busca de algun arma para poder defenderte"<<endl;
-            //Llamar funcion de armeria
-
+        armeria();
+    }else {
+        system("cls");
+        cout<<"Te acercas lentamente a tu enemigo por detras, pero por accidente tiras un par de cajas causando lago de ruido"
+            <<"\nesto hace que se de cuenta de tu presencia y te ataca tambien. Te golpea fuertemente empujandote hacia"
+            <<"\nuna esquina en donde encuentras un viejo tubo oxidado, el cual tomas para defenderte. Tu enemigo se abalanza"
+            <<"\nhacia ti para acabar contigo, pero logras esquivarlo y le clavas el tubo por la espalda eliminandolo"
+            <<"\n\n------------Perdiste 15 puntos de vida-------------"
+            <<"\n\nAhora te diriges hacia la armeria en busca de algun arma para poder defenderte"
+            <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+    if(getch())
+        armeria();
     }
 	return 0;
 }
@@ -113,7 +156,7 @@ int main()
 	cout << "\n\t1. Iniciar juego" << endl;
 	cout << "\t2. Salir" << endl;
 	cout << "Tu respuesta es: ";
-	int acceso = ValidarEntrada();
+	acceso = ValidarEntrada();
 	if (acceso == 1) {
 		nombre();
 	}else{
@@ -163,7 +206,7 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
-//Esta función determina si los valores ingresados son enteros o cadenas de texto
+/**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano*/
 bool isValidInt(string numeroEnCadena) {
 	int inicio = 0;
 	int i = 0;
