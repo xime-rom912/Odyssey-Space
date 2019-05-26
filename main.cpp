@@ -7,7 +7,7 @@
 using namespace std;
 
 int ValidarEntrada();
-bool isValidInt(string numeroEnCadena);
+bool isValidInt(string);
 void cuartelMilitar ();
 void armeria();
 int buscarTuMismo();
@@ -23,7 +23,9 @@ struct Personaje{
 }Character1;
 
 void g_over(){
-
+    system("cls");
+    system("color 0C");
+    cout<<"                          GAME OVER";
 }
 
 void armeria(){
@@ -35,7 +37,10 @@ void armeria(){
     acceso = ValidarEntrada();
     if (acceso == 1) {
         system("cls");
-        cout<<"Te diriges a la base, descubren tu nave, abren fuego y mueres";
+        cout<<"Te diriges a la base, descubren tu nave, abren fuego y mueres"
+            <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+        if(getch())
+            g_over();
     }
     else {
         //nave alienigena
@@ -63,7 +68,11 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
             cuartelMilitar();;
         }
         else {
-            cout<<"\nLa verdad ya que se le puede hacer, mejor vive tu vida en otro planeta.\n";
+            system("cls");
+            cout<<"La verdad ya que se le puede hacer, mejor vive tu vida en otro planeta."
+                <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+            if(getch())
+                g_over();
         }
 
     }
@@ -99,7 +108,11 @@ void cuartelMilitar (){
             system("cls");
             armeria();
         } else {
-            cout<<"Mueres por la falta de armas para defenderte";
+            system("cls");
+            cout<<"Mueres por la falta de armas para defenderte"
+                <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+            if(getch())
+                g_over();
         }
 	}else{
         buscarTuMismo();
@@ -137,7 +150,7 @@ int buscarTuMismo()
 
 int main()
 {
-	system("color 8B");//Cambia el color de la consola 
+    system("color 8B");
 	cout << "----------------Odyssey Space---------------" << endl;
 	cout << "\tMenu" << endl;
 	cout << "\n\t1. Iniciar juego" << endl;
