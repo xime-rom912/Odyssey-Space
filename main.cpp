@@ -153,6 +153,7 @@ int buscarTuMismo()
 
 int main()
 {
+	system("color 8B");
 	cout << "----------------SPACE ODYSSEY---------------" << endl;
 	cout << "\tMenu" << endl;
 	cout << "\n\t1. Iniciar juego" << endl;
