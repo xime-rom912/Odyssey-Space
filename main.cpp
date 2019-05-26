@@ -11,6 +11,8 @@ bool isValidInt(string);
 void cuartelMilitar ();
 void armeria();
 int buscarTuMismo();
+void nave_alienigena();
+void sala_de_prisioneros();
 int opci = 0;
 int acceso;
 
@@ -43,7 +45,7 @@ void armeria(){
             g_over();
     }
     else {
-        //nave alienigena
+        nave_alienigena();
     }
 }
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
@@ -206,6 +208,47 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
+void nave_alienigena(){
+	cout << "Te diriges a la base alien y pasas desapercibido"
+		 << "\npor la nave alienigena\n\n" << endl;
+	cout << "Has logrado entrar a la base y debes actuar rapido\n"
+		 << char(168) << "Que decides hacer" << char(63) << endl;
+	cout <<"\n1.Escabullirse en la sala de mando y enfrentar a los"
+		 <<"\n  alien"<<endl;
+	cout << "2.Abrir fuego a discrecion" << endl;
+	acceso = ValidarEntrada();
+	if (acceso == 1) {
+		cout << "Pierdes vida, pero has encontrado el lugar donde"
+			 << "\nestan los prisioneros" << endl;
+			 sala_de_prisioneros();
+	}
+	else {
+		system("cls");
+		cout << "Te han descubierto y no logras salir con vida"
+			 <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+		if (getch())
+			g_over();
+	}
+}
+void sala_de_prisioneros(){
+	system("cls");
+	cout<<"Te encuentras con las celdas de los prisioneros"
+		<<"\ny has identificado la celda donde esta tu familia"
+		<<"\n,pero escuchas que se aproximan los alien puedes"
+		<<"\nescapar con cautela unicamente con tu familia o"
+		<<"\nliberar a todos los prisioneros y llamar la aten-"
+		<<"\ncion de todas las unidades alien\n\n"<<endl;
+	cout<<"La decision es tuya: "<<endl;
+	cout<<"1.Liberar unicamente a tu familia"<<endl;
+	cout<<"2.Liberar a todos"<<endl;
+	acceso = ValidarEntrada();
+	if (acceso == 1) {
+		//Llamar a funcion Final alternativo 1
+	}
+	else {
+		//Llamar a funcion Final altn 2
+	}
+}
 /**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano*/
 bool isValidInt(string numeroEnCadena) {
 	int inicio = 0;
@@ -229,4 +272,3 @@ bool isValidInt(string numeroEnCadena) {
 			valido = false;
 	}
 	return valido;
-}
