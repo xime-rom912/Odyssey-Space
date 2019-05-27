@@ -177,6 +177,16 @@ int prisioneros(){
         cout<<"\n\nLa decision es tuya: ";
         acceso=ValidarEntrada();
         break;
+        if(acceso==1){
+
+            cout<<"";
+
+        }else if(acceso==2){
+
+            cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
+            "las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena";
+
+        }
     }
     
     return 0;
