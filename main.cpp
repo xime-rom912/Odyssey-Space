@@ -170,7 +170,7 @@ int prisioneros(){
 
         switch (acceso){
         case 1:
-            
+                cout<<"\n\n\nHacer tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n\n\n";
             break;
         case 2:
             cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
