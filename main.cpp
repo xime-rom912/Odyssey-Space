@@ -13,16 +13,15 @@ void armeria();
 int buscarTuMismo();
 void nave_alienigena();
 void sala_de_prisioneros();
+int *vida_extra = NULL;
 int opci = 0;
 int acceso;
 
 struct Personaje{
-
-    string nombre;
     int vida = 100;
-    int arma = 20;
+    void quitar_vid(int cant) { vida -= cant;}
+}carac;
 
-}Character1;
 
 void g_over(){
     system("cls");
@@ -138,57 +137,42 @@ int buscarTuMismo()
         armeria();
     }else {
         system("cls");
+        carac.quitar_vid(20);
         cout<<"Te acercas lentamente a tu enemigo por detras, pero por accidente tiras un par de cajas causando lago de ruido"
             <<"\nesto hace que se de cuenta de tu presencia y te ataca tambien. Te golpea fuertemente empujandote hacia"
             <<"\nuna esquina en donde encuentras un viejo tubo oxidado, el cual tomas para defenderte. Tu enemigo se abalanza"
             <<"\nhacia ti para acabar contigo, pero logras esquivarlo y le clavas el tubo por la espalda eliminandolo"
             <<"\n\n------------Perdiste 15 puntos de vida-------------"
             <<"\n\nAhora te diriges hacia la armeria en busca de algun arma para poder defenderte"
-            <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
-    if(getch())
+            <<"\nAntes te percatas que hay un objeto decides \n1.Recogerlo \n2.Dejarlo"
+            <<"\n\nTu desicion: ";
+        acceso = ValidarEntrada();
+        if (acceso == 1){
+            vida_extra = new int(35);
+            assert(vida_extra != NULL);
+        }
         armeria();
     }
 	return 0;
 }
 
 int prisioneros(){
-
     system("cls");
-    cout<<"Has llegado a los cuartos de los prisioneros, al parecer estos seres estan experimentando con nosotros, no tienes idea"
-    <<"\npara que, vas recorriendo todas los cuartos y no lo puedes creer, encontraste a tu familia, puedes salvar a tu familia"
-    <<"\ncon la llave de acceso,o liberar a todos los secuestrados que hay ahi."
-    <<"\nQue eliges?\n[1] Liberar solamente a tu familia.\n[2] Liberar a todos.";
-    acceso=ValidarEntrada();
-    switch (acceso){
-    case 1:
-        
-        break;
-    case 2:
-        system("cls");
-        cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
+    cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
         <<"\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados, para escapar del lugar"
         <<"\npero llegan mas alienigenas y se crea un enfrentamiento y se encuentran con el lider alien y entre tratan de matarlo, "
-        "\nal enfrentarlo muchos mueren, tu por la espalda mientras otros lo estan distrayendo, con una espada de energia lo apuñalas"
-        <<"en el corazon, lo has derrotado, ahora intentas huir con tu familia del enfrentamiento entre humanos y aliens, pero atras"
-        <<"de ti el jefe alien se levante y dice debiste apuntar a la cabeza.";
-        cout<<"\nNecesitan vencer al lider para poder escapar todos, Decides matarlo."
-        "\n[1] Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
-        "\n[2] Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo";
-        cout<<"\n\nLa decision es tuya: ";
-        acceso=ValidarEntrada();
-        break;
-        if(acceso==1){
+        <<"\nal enfrentarlo muchos mueren, tu por la espalda mientras otros lo estan distrayendo, con una espada de energia lo apuñalas"
+        <<"\nen el corazon, lo has derrotado, ahora intentas huir con tu familia del enfrentamiento entre humanos y aliens, pero atras"
+        <<"\nde ti el jefe alien se levante y dice debiste apuntar a la cabeza."
+        <<"\nNecesitan vencer al lider para poder escapar todos, Decides matarlo."
+        <<"\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
+        <<"\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo"
+        <<"\n\nLa decision es tuya: ";
+    acceso=ValidarEntrada();
+	/*if (acceso == 1)
+    else*/
 
-            cout<<"";
 
-        }else if(acceso==2){
-
-            cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
-            "las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena";
-
-        }
-    }
-    
     return 0;
 
 }
@@ -261,12 +245,13 @@ void nave_alienigena(){
         <<"\n\nTu desicion: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
-        	system("cls");
+        system("cls");
+        carac.quitar_vid(30);
 		cout<<"------------Perdiste 15 puntos de vida-------------"
-            	    <<"\nHas encontrado el lugar donde estan los prisioneros"
-                     <<"\n\n-Presiona cualquier tecla para seguir-";
-       		if(getch())
-            		sala_de_prisioneros();
+            <<"\nHas encontrado el lugar donde estan los prisioneros"
+            <<"\n\n-Presiona cualquier tecla para seguir-";
+        if(getch())
+            sala_de_prisioneros();
 	}
 	else {
 		system("cls");
@@ -291,7 +276,7 @@ void sala_de_prisioneros(){
 		//Llamar a funcion Final alternativo 1
 	}
 	else {
-		//Llamar a funcion Final altn 2
+
 	}
 }
 /**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano*/
