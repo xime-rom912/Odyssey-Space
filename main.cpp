@@ -156,6 +156,22 @@ int buscarTuMismo()
 	return 0;
 }
 
+int familia(){
+
+    cout<<"Los has liberado, ahora tienes que salir de ahi, pero te encuentras con un elite, luchas contra el.";
+    if(carac.vida>=50){
+        cout<<"\nLo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n";
+
+    }else{
+        
+        cout<<"\nCon las heridas que tienes no logras vencerlo, pero tu familia ha escapado de la tierra\n";
+
+    }
+    
+
+    return 0;
+}
+
 int prisioneros(){
     system("cls");
     cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
@@ -282,7 +298,7 @@ void sala_de_prisioneros(){
         <<"\n\nTu desicion: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
-		//Llamar a funcion Final alternativo 1
+		familia();
 	}
 	else if(acceso==2) {
         prisioneros();
