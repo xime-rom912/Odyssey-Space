@@ -252,18 +252,21 @@ int ValidarEntrada() {
 	return 0;
 }
 void nave_alienigena(){
-	cout << "Te diriges a la base alien y pasas desapercibido"
-		 << "\npor la nave alienigena\n\n" << endl;
-	cout << "Has logrado entrar a la base y debes actuar rapido\n"
-		 << char(168) << "Que decides hacer" << char(63) << endl;
-	cout <<"\n1.Escabullirse en la sala de mando y enfrentar a los"
-		 <<"\n  alien"<<endl;
-	cout << "2.Abrir fuego a discrecion" << endl;
+    system("cls");
+	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
+        <<"\nHas logrado entrar a la base y debes actuar rapido"
+        <<"\nQue decides hacer?"
+        <<"\n1.Escabullirse en la sala de mando y enfrentar a los alien"
+        <<"\n2.Abrir fuego a discrecion"
+        <<"\n\nTu desicion: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
-		cout << "Pierdes vida, pero has encontrado el lugar donde"
-			 << "\nestan los prisioneros" << endl;
-			 sala_de_prisioneros();
+        	system("cls");
+		cout<<"------------Perdiste 15 puntos de vida-------------"
+            	    <<"\nHas encontrado el lugar donde estan los prisioneros"
+                     <<"\n\n-Presiona cualquier tecla para seguir-";
+       		if(getch())
+            		sala_de_prisioneros();
 	}
 	else {
 		system("cls");
@@ -275,15 +278,14 @@ void nave_alienigena(){
 }
 void sala_de_prisioneros(){
 	system("cls");
-	cout<<"Te encuentras con las celdas de los prisioneros"
-		<<"\ny has identificado la celda donde esta tu familia"
-		<<"\n,pero escuchas que se aproximan los alien puedes"
-		<<"\nescapar con cautela unicamente con tu familia o"
-		<<"\nliberar a todos los prisioneros y llamar la aten-"
-		<<"\ncion de todas las unidades alien\n\n"<<endl;
-	cout<<"La decision es tuya: "<<endl;
-	cout<<"1.Liberar unicamente a tu familia"<<endl;
-	cout<<"2.Liberar a todos"<<endl;
+	cout<<"Te encuentras con las celdas de los prisioneros y has identificado la celda"
+		<<"\ndonde esta tu familia, pero escuchas que se aproximan los alien puedes"
+		<<"\nescapar con cautela unicamente con tu familia o liberar a todos los "
+		<<"\nprisioneros y llamar la atencion de todas las unidades alien"
+        <<"\nLa decision es tuya: "
+        <<"\n1.Liberar unicamente a tu familia"
+        <<"\n2.Liberar a todos"
+        <<"\n\nTu desicion: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
 		//Llamar a funcion Final alternativo 1
