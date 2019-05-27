@@ -169,13 +169,20 @@ int prisioneros(){
         <<"\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo"
         <<"\n\nLa decision es tuya: ";
     acceso=ValidarEntrada();
-	/*if (acceso == 1)
-    else*/
 
+        switch (acceso){
+        case 1:
+            
+            break;
+        case 2:
             cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
             " las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, te sacrificaste por la humanidad, "
             "seras recordado como un heroe.\n\n";
             cout<<"\n***********************FIN******************************";
+            break;
+     
+        }
+            
 
     return 0;
 
