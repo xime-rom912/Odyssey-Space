@@ -149,6 +149,38 @@ int buscarTuMismo()
 	return 0;
 }
 
+int prisioneros(){
+
+    system("cls");
+    cout<<"Has llegado a los cuartos de los prisioneros, al parecer estos seres estan experimentando con nosotros, no tienes idea"
+    <<"\npara que, vas recorriendo todas los cuartos y no lo puedes creer, encontraste a tu familia, puedes salvar a tu familia"
+    <<"\ncon la llave de acceso,o liberar a todos los secuestrados que hay ahi."
+    <<"\nQue eliges?\n[1] Liberar solamente a tu familia.\n[2] Liberar a todos.";
+    acceso=ValidarEntrada();
+    switch (acceso){
+    case 1:
+        
+        break;
+    case 2:
+        system("cls");
+        cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
+        <<"\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados, para escapar del lugar"
+        <<"\npero llegan mas alienigenas y se crea un enfrentamiento y se encuentran con el lider alien y entre tratan de matarlo, "
+        "\nal enfrentarlo muchos mueren, tu por la espalda mientras otros lo estan distrayendo, con una espada de energia lo apuñalas"
+        <<"en el corazon, lo has derrotado, ahora intentas huir con tu familia del enfrentamiento entre humanos y aliens, pero atras"
+        <<"de ti el jefe alien se levante y dice debiste apuntar a la cabeza.";
+        cout<<"\nNecesitan vencer al lider para poder escapar todos, Decides matarlo."
+        "\n[1] Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
+        "\n[2] Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo";
+        cout<<"\n\nLa decision es tuya: ";
+        acceso=ValidarEntrada();
+        break;
+    }
+    
+    return 0;
+
+}
+
 int main()
 {
 	cout << "----------------SPACE ODYSSEY---------------" << endl;
