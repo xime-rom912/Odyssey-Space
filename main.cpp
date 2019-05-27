@@ -276,7 +276,7 @@ void sala_de_prisioneros(){
 		//Llamar a funcion Final alternativo 1
 	}
 	else {
-
+        prisioneros();
 	}
 }
 /**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano*/
