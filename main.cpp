@@ -184,7 +184,9 @@ int prisioneros(){
         }else if(acceso==2){
 
             cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
-            "las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena";
+            " las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, te sacrificaste por la humanidad, "
+            "seras recordado como un heroe.\n\n";
+            cout<<"\n***********************FIN******************************";
 
         }
     }
