@@ -160,15 +160,13 @@ int prisioneros(){
     system("cls");
     cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
         <<"\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados, para escapar del lugar"
-        <<"\npero llegan mas alienigenas y se crea un enfrentamiento y se encuentran con el lider alien y entre tratan de matarlo, "
+        <<"\npero llegan mas alienigenas y se crea un enfrentamiento y se encuentran con el lider alien y entre todos tratan de matarlo, "
         <<"\nal enfrentarlo muchos mueren, tu por la espalda mientras otros lo estan distrayendo, con una espada de energia lo apuñalas"
-        <<"\nen el corazon, lo has derrotado, ahora intentas huir con tu familia del enfrentamiento entre humanos y aliens, pero atras"
-        <<"\nde ti el jefe alien se levante y dice debiste apuntar a la cabeza."
-        <<"\nNecesitan vencer al lider para poder escapar todos, Decides matarlo."
+        <<"\nen el corazon, lo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
         <<"\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
-        <<"\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo"
+        <<"\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo."
         <<"\n\nLa decision es tuya: ";
-    acceso=ValidarEntrada();
+        acceso=ValidarEntrada();
 
         switch (acceso){
         case 1:
@@ -176,9 +174,9 @@ int prisioneros(){
             break;
         case 2:
             cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
-            " las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, te sacrificaste por la humanidad, "
+            " las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
             "seras recordado como un heroe.\n\n";
-            cout<<"\n***********************FIN******************************";
+            cout<<"\n***************************************************FIN*********************************************************\n\n";
             break;
      
         }
@@ -286,7 +284,7 @@ void sala_de_prisioneros(){
 	if (acceso == 1) {
 		//Llamar a funcion Final alternativo 1
 	}
-	else {
+	else if(acceso==2) {
         prisioneros();
 	}
 }
