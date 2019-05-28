@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 int ValidarEntrada();
 bool isValidInt(string);
 void cuartelMilitar ();
@@ -20,7 +19,7 @@ int acceso;
 
 struct Personaje{
     int vida = 100;
-    void quitar_vid(int cant){ vida -= cant;}
+    void quitar_vid(int cant) { vida -= cant;}
 }carac;
 
 
@@ -30,6 +29,24 @@ void g_over(){
     cout<<"                          GAME OVER";
 }
 
+void armeria(){
+    system("cls");
+    cout<<"Sales del cuartel armado hasta las chanclas"
+        <<"\nQue decides?"
+        <<"\n1.Subes a tu nave" << "\n2.Subes a la nave alinigena"
+        << "\n\nTu desicion: ";
+    acceso = ValidarEntrada();
+    if (acceso == 1) {
+        system("cls");
+        cout<<"Te diriges a la base, descubren tu nave, abren fuego y mueres"
+            <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+        if(getch())
+            g_over();
+    }
+    else {
+        nave_alienigena();
+    }
+}
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
     system("cls");
     cout<<"\t\t\tInstrucciones: "
@@ -61,16 +78,12 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 
     }
 }
-
 void nombre() {
 	string nombre;
 	cout << "Escribe tu nombre por favor: ";
 	cin >> nombre;
 	introduc(nombre);
 }
-
-
-
 void cuartelMilitar (){
     system("cls");
     int choice;
@@ -108,7 +121,8 @@ void cuartelMilitar (){
 
 }
 
-int buscarTuMismo(){
+int buscarTuMismo()
+{
     system("cls");
     cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has"
         <<"\nenterado de la cruda verdad. Una extrana raza de extraterrestres ha invadido el planeta mientras"
@@ -142,64 +156,17 @@ int buscarTuMismo(){
 	return 0;
 }
 
-void armeria(){
-    system("cls");
-    cout<<"Sales del cuartel armado hasta las chanclas"
-        <<"\nQue decides?"
-        <<"\n1.Subes a tu nave" << "\n2.Subes a la nave alinigena"
-        << "\n\nTu desicion: ";
-    acceso = ValidarEntrada();
-    if (acceso == 1) {
-        system("cls");
-        cout<<"Te diriges a la base, descubren tu nave, abren fuego y mueres"
-            <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
-        if(getch())
-            g_over();
-    }
-    else {
-        nave_alienigena();
-    }
-}
-
-void nave_alienigena(){
-    system("cls");
-	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
-        <<"\nHas logrado entrar a la base y debes actuar rapido"
-        <<"\nQue decides hacer?"
-        <<"\n1.Escabullirse en la sala de mando y enfrentar a los alien"
-        <<"\n2.Abrir fuego a discrecion"
-        <<"\n\nTu desicion: ";
-	acceso = ValidarEntrada();
-	if (acceso == 1) {
-        system("cls");
-        carac.quitar_vid(30);
-		cout<<"------------Perdiste 15 puntos de vida-------------"
-            <<"\nHas encontrado el lugar donde estan los prisioneros"
-            <<"\n\n-Presiona cualquier tecla para seguir-";
-        if(getch())
-            sala_de_prisioneros();
-	}
-	else {
-		system("cls");
-		cout << "Te han descubierto y no logras salir con vida"
-			 <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
-		if (getch())
-			g_over();
-	}
-}
-
 int familia(){
-
-    cout<<"Los has liberado, ahora tienes que salir de ahi, pero te encuentras con un elite, luchas contra el.";
-    if(carac.vida>=50){
-        cout<<"\nLo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n";
-
+    system("cls");
+    cout<<"Los has liberado, ahora tienes que salir de ahi, pero te encuentras con un"
+        <<"\nelite, luchas contra el y...";
+    if(carac.vida>=80){
+        cout<<"\nlo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n";
     }else{
-        
         cout<<"\nCon las heridas que tienes no logras vencerlo, pero tu familia ha escapado de la tierra\n";
         g_over();
     }
-    
+
 
     return 0;
 }
@@ -225,38 +192,18 @@ int prisioneros(){
             cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
             " las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
             "seras recordado como un heroe.\n\n";
-            cout<<"\n******************************************************************************FIN***********************************************************************\n\n";
+            cout<<"\n***************************************************FIN*********************************************************\n\n";
             break;
-     
+
         }
-            
+
 
     return 0;
 
 }
 
-void sala_de_prisioneros(){
-	system("cls");
-	cout<<"Te encuentras con las celdas de los prisioneros y has identificado la celda"
-		<<"\ndonde esta tu familia, pero escuchas que se aproximan los alien puedes"
-		<<"\nescapar con cautela unicamente con tu familia o liberar a todos los "
-		<<"\nprisioneros y llamar la atencion de todas las unidades alien"
-        <<"\nLa decision es tuya: "
-        <<"\n1.Liberar unicamente a tu familia"
-        <<"\n2.Liberar a todos"
-        <<"\n\nTu desicion: ";
-	acceso = ValidarEntrada();
-	if (acceso == 1) {
-		familia();
-	}
-	else if(acceso==2) {
-        prisioneros();
-	}
-}
-
-
-int main(){
-        
+int main()
+{
 	system("color 8B");
 	cout << "----------------SPACE ODYSSEY---------------" << endl;
 	cout << "\tMenu" << endl;
@@ -265,19 +212,16 @@ int main(){
 	cout << "Tu respuesta es: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
-        string nomb_usu;
 		nombre();
 	}else{
-	    cout<<"Gracias por jugar Space Odissey";
+	    cout<<"Gracias por jugar Odyssey Space";
 	}
 
 	return 0;
 }
 
-/**Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida
-*@param no recibe parametros
-*@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda
-*/
+//Esta función recibe un entero que le permite identificar la
+//opción seleccionada una vez de haber pasado por la validacion de cadena o entero
 int ValidarEntrada() {
 
 	string eleccionCadena;
@@ -319,9 +263,6 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
-
-
-/**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano*/
 /**Esta función contiene el escenario y lo que sucede en la nave alien
 *@param no recibe parámetros
 *@return void
