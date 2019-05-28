@@ -7,6 +7,8 @@
 
 using namespace std;
 
+void nombre();
+void salir();
 void introduc(string nomb_usu);
 int ValidarEntrada();
 bool isValidInt(string);
@@ -18,35 +20,25 @@ void sala_de_prisioneros();
 int *vida_extra = NULL;
 int opci = 0;
 int acceso;
+void (*fun[])()={nombre,salir};
 
 struct Personaje{
     int vida = 100;
     void quitar_vid(int cant) { vida -= cant;}
     void aum_vid(int cant) { vida += cant;}
 }carac;
-/**
-*@brief Esta función....
-*/
-int tiempo (int seg){
-    seg += 1;
-    tiempo(seg);
-    return 0;
-}
+
 /**
 *@brief Indica al usuario que el juego ha terminado fatalmente.
-*@param No recibe parámetros
-*@return Retorna void
+*@param no recibe parámetros
+*@return retorna void
 */
 void g_over(){
     system("cls");
     system("color 0C");
     cout<<"                          GAME OVER";
 }
-/**
-*@brief En esta función se desarrolla la trama en la armería.
-*@param No recibe parámetros
-*@return Retorna void
-*/
+
 void armeria(){
     system("cls");
     cout<<"Sales del cuartel armado hasta las chanclas"
@@ -66,8 +58,8 @@ void armeria(){
     }
 }
 /**
-*@brief Esta funcion presenta las instrucciones del juego. 
-*@param nomb_usu recibe una cadena de texto que contiene el nombre del usuario para desplegarlo en pantalla a través de esta función.
+*@brief Esta funcion presenta las instrucciones del juego.
+*@param Recibe una cadena de texto que contiene el nombre del usuario para desplegarlo en pantalla a través de esta función.
 *@return retorna void.
 */
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
@@ -104,8 +96,8 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 }
 /**
 *@brief Captura el nombre del usuario.
-*@param No recibe parámetros.
-*@return Retorna void.
+*@param no recibe parámetros.
+*@return retorna void.
 */
 void nombre() {
 	string nombre;
@@ -113,11 +105,11 @@ void nombre() {
 	cin >> nombre;
 	introduc(nombre);
 }
-/**
-*@brief En esta función el jugador decidirá sus primeras acciones.
-*@param No recibe parárametros.
-*@return Retorna void.
-*/
+void salir(){
+    system("cls");
+    system("color 1A");
+    cout<<"Gracias por jugar Odyssey Space\n";
+}
 void cuartelMilitar (){
     system("cls");
     int choice;
@@ -154,11 +146,7 @@ void cuartelMilitar (){
 	}
 
 }
-/**
-*@brief Aquí se desarrolla la decisión 2 de la funcion cuartelMilitar.
-*@param Esta función no recibe parámetros.
-*@return retorna 0.
-*/
+
 int buscarTuMismo()
 {
     system("cls");
@@ -193,11 +181,7 @@ int buscarTuMismo()
     }
 	return 0;
 }
-/**
-*@brief Esta función contine la historia de la primera opción de la función sala_de_prisioneros. Además se presenta un final alternativo.
-*@param No recibe parámetros.
-*@return Retorna 0, indica que el juego ha terminado.
-*/
+
 int familia(){
     system("cls");
     cout<<"Los has liberado, ahora tienes que salir de ahi, pero te encuentras con un"
@@ -218,11 +202,7 @@ int familia(){
 
     return 0;
 }
-/**
-*@brief Aquí se determina el final de la historia. Se presenta la última decisión para ganar o perder.
-*@param No recibe parámetros.
-*@return Retorna void.
-*/
+
 int prisioneros(){
     system("cls");
     cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
@@ -256,6 +236,7 @@ int prisioneros(){
 
 int main()
 {
+
 	system("color 8B");
 	cout << "----------------SPACE ODYSSEY---------------" << endl;
 	cout << "\tMenu" << endl;
@@ -263,19 +244,12 @@ int main()
 	cout << "\t2. Salir" << endl;
 	cout << "Tu respuesta es: ";
 	acceso = ValidarEntrada();
-	if (acceso == 1) {
-        void(*ptr_nombre)(void)= nombre;
-        ptr_nombre();
-	thread hil_time(tiempo,0);	
-	}else{
-	    cout<<"Gracias por jugar Odyssey Space";
-	}
-
+	fun[acceso-1]();
 	return 0;
 }
 
 /**
-*@brief Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida.
+*@brief Esta función se en]()carga de validar la entrada y detecta la opcion que ha sido elegida.
 *@param no recibe parametros.
 *@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda.
 */
@@ -325,6 +299,7 @@ int ValidarEntrada() {
 *@param no recibe parámetros.
 *@return void.
 */
+
 void nave_alienigena(){
     system("cls");
 	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
@@ -351,11 +326,6 @@ void nave_alienigena(){
 			g_over();
 	}
 }
-/**
-*@brief Aquí se desarrollan los sucesos de la sala de prisioneros.
-*@param No recibe parámetros
-*@return Retorna void.
-*/
 void sala_de_prisioneros(){
 	system("cls");
 	cout<<"Te encuentras con las celdas de los prisioneros y has identificado la celda"
