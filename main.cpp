@@ -52,6 +52,11 @@ void armeria(){
         nave_alienigena();
     }
 }
+/**
+*@brief Esta funcion presenta las instrucciones del juego 
+*@param Recibe una cadena de texto que contiene el nombre del usuario para desplegarlo en pantalla a través de esta función
+*@return retorna void
+*/
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
     system("cls");
     cout<<"\t\t\tInstrucciones: "
