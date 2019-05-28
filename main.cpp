@@ -51,6 +51,7 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
     system("cls");
     cout<<"\t\t\tInstrucciones: "
         <<"\nLee atentamente la historia que aparece y toma tu desicion sabiamente."
+        <<"\nEmpezaras con 100 puntos de vida la cual podras ganar mas o perder dependiendo en tus deciciones"
         <<"\nDigita el numero correspondiente a cada mision"
         <<"\nEso es todo, esperamos que disfrutes el juego."
         <<"\n-Presiona cualquier tecla para seguir-"<<endl;
@@ -78,12 +79,14 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 
     }
 }
+
 void nombre() {
 	string nombre;
 	cout << "Escribe tu nombre por favor: ";
 	cin >> nombre;
 	introduc(nombre);
 }
+
 void cuartelMilitar (){
     system("cls");
     int choice;
