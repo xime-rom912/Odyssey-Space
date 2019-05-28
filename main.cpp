@@ -274,10 +274,18 @@ int main(){
 	return 0;
 }
 
+<<<<<<< HEAD
 
 //Esta función recibe un entero que le permite identificar la
 //opción seleccionada una vez de haber pasado por la validacion de cadena o entero
 int ValidarEntrada(){
+=======
+/**Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida
+*@param no recibe parametros
+*@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda
+*/
+int ValidarEntrada() {
+>>>>>>> f6f300342fb4b2567d50bc2627bcbf338ab7f3c0
 
 	string eleccionCadena;
 	bool key = false;
