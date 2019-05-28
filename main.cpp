@@ -224,7 +224,8 @@ int main()
 	return 0;
 }
 
-/**Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida
+/**
+*@brief Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida
 *@param no recibe parametros
 *@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda
 */
@@ -269,7 +270,8 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
-/**Esta función contiene el escenario y lo que sucede en la nave alien
+/**
+*@brief Esta función contiene el escenario y lo que sucede en la nave alien
 *@param no recibe parámetros
 *@return void
 */
