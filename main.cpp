@@ -165,7 +165,7 @@ int familia(){
     }else{
         
         cout<<"\nCon las heridas que tienes no logras vencerlo, pero tu familia ha escapado de la tierra\n";
-
+        g_over();
     }
     
 
@@ -175,11 +175,11 @@ int familia(){
 int prisioneros(){
     system("cls");
     cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
-        <<"\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados, para escapar del lugar"
-        <<"\npero llegan mas alienigenas y se crea un enfrentamiento y se encuentran con el lider alien y entre todos tratan de matarlo, "
+        <<"\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados,"
+        <<"\npara escapar del lugar, se inicia un enfrentamiento y se encuentran con el lider alien y entre todos tratan de matarlo, "
         <<"\nal enfrentarlo muchos mueren, tu por la espalda mientras otros lo estan distrayendo, con una espada de energia lo apuñalas"
         <<"\nen el corazon, lo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
-        <<"\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
+        <<"\n\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
         <<"\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo."
         <<"\n\nLa decision es tuya: ";
         acceso=ValidarEntrada();
@@ -187,6 +187,7 @@ int prisioneros(){
         switch (acceso){
         case 1:
                 cout<<"\n\n\nHacer tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n\n\n";
+                g_over();
             break;
         case 2:
             cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
