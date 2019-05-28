@@ -154,6 +154,11 @@ void cuartelMilitar (){
 	}
 
 }
+/**
+*@brief Aquí se desarrolla la decisión 2 de la funcion cuartelMilitar.
+*@param Esta función no recibe parámetros.
+*@return retorna 0.
+*/
 
 int buscarTuMismo()
 {
