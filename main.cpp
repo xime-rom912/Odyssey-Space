@@ -3,6 +3,7 @@
 #include <string>
 #include <assert.h>
 #include <conio.h>
+#include<thread>
 
 using namespace std;
 
@@ -214,6 +215,7 @@ int main()
 	cout << "\t2. Salir" << endl;
 	cout << "Tu respuesta es: ";
 	acceso = ValidarEntrada();
+    
 	if (acceso == 1) {
 		nombre();
 	}else{
@@ -341,3 +343,4 @@ bool isValidInt(string numeroEnCadena) {
 	}
 	return valido;
 }
+
