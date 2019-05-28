@@ -261,6 +261,10 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
+/**Esta función contiene el escenario y lo que sucede en la nave alien
+*@param no recibe parámetros
+*@return void
+*/
 void nave_alienigena(){
     system("cls");
 	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
