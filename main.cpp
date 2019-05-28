@@ -258,6 +258,9 @@ int ValidarEntrada() {
 		catch (int ErrorDos) {
 			cout << "Seleccione la opcion 1 o 2" << endl;
 		}
+		catch(std::out_of_range){
+            		cout<<"Seleccione la opcion 1 o 2" << endl;
+        	}
 	} while (key != true);
 	return 0;
 }
