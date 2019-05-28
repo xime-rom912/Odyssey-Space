@@ -312,12 +312,67 @@ int ValidarEntrada(){
 		catch (int ErrorDos) {
 			cout << "Seleccione la opcion 1 o 2" << endl;
 		}
+		catch(std::out_of_range){
+            		cout<<"Seleccione la opcion 1 o 2" << endl;
+        	}
 	} while (key != true);
 	return 0;
 }
 
 
 /**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano*/
+/**Esta función contiene el escenario y lo que sucede en la nave alien
+*@param no recibe parámetros
+*@return void
+*/
+void nave_alienigena(){
+    system("cls");
+	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
+        <<"\nHas logrado entrar a la base y debes actuar rapido"
+        <<"\nQue decides hacer?"
+        <<"\n1.Escabullirse en la sala de mando y enfrentar a los alien"
+        <<"\n2.Abrir fuego a discrecion"
+        <<"\n\nTu desicion: ";
+	acceso = ValidarEntrada();
+	if (acceso == 1) {
+        system("cls");
+        carac.quitar_vid(30);
+		cout<<"------------Perdiste 15 puntos de vida-------------"
+            <<"\nHas encontrado el lugar donde estan los prisioneros"
+            <<"\n\n-Presiona cualquier tecla para seguir-";
+        if(getch())
+            sala_de_prisioneros();
+	}
+	else {
+		system("cls");
+		cout << "Te han descubierto y no logras salir con vida"
+			 <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+		if (getch())
+			g_over();
+	}
+}
+void sala_de_prisioneros(){
+	system("cls");
+	cout<<"Te encuentras con las celdas de los prisioneros y has identificado la celda"
+		<<"\ndonde esta tu familia, pero escuchas que se aproximan los alien puedes"
+		<<"\nescapar con cautela unicamente con tu familia o liberar a todos los "
+		<<"\nprisioneros y llamar la atencion de todas las unidades alien"
+        <<"\nLa decision es tuya: "
+        <<"\n1.Liberar unicamente a tu familia"
+        <<"\n2.Liberar a todos"
+        <<"\n\nTu desicion: ";
+	acceso = ValidarEntrada();
+	if (acceso == 1) {
+		familia();
+	}
+	else if(acceso==2) {
+        prisioneros();
+	}
+}
+/**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
+*@param numeroEnCadena, recibe una cadena de texto
+*@return regresa un dato booleano, retorna 1 si los datos ingresados son enteros y 0 si son caracteres
+*/
 bool isValidInt(string numeroEnCadena) {
 	int inicio = 0;
 	int i = 0;
