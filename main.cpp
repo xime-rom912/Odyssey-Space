@@ -25,9 +25,9 @@ struct Personaje{
     void aum_vid(int cant) { vida += cant;}
 }carac;
 
-int time (int seg){
+int tiempo (int seg){
     seg += 1;
-    time(seg);
+    tiempo(seg);
     return 0;
 }
 /**
@@ -247,7 +247,7 @@ int main()
 	if (acceso == 1) {
         void(*ptr_nombre)(void)= nombre;
         ptr_nombre();
-	thread hil_time(time,0);	
+	thread hil_time(tiempo,0);	
 	}else{
 	    cout<<"Gracias por jugar Odyssey Space";
 	}
