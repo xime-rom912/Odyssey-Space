@@ -26,7 +26,7 @@ struct Personaje{
 }carac;
 
 int time (){
-    
+    return 0;
 }
 void g_over(){
     system("cls");
@@ -239,7 +239,9 @@ int main()
 	cout << "Tu respuesta es: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
-		nombre();
+        void(*ptr_nombre)(void)= nombre;
+        ptr_nombre();
+		
 	}else{
 	    cout<<"Gracias por jugar Odyssey Space";
 	}
