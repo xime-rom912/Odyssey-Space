@@ -9,6 +9,7 @@ using namespace std;
 
 int ValidarEntrada();
 bool isValidInt(string);
+void introduc(string nomb_usu);
 void cuartelMilitar ();
 void armeria();
 int buscarTuMismo();
@@ -225,8 +226,11 @@ int main()
 	return 0;
 }
 
-//Esta función recibe un entero que le permite identificar la
-//opción seleccionada una vez de haber pasado por la validacion de cadena o entero
+/**
+*@brief Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida
+*@param no recibe parametros
+*@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda
+*/
 int ValidarEntrada() {
 
 	string eleccionCadena;
@@ -268,7 +272,8 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
-/**Esta función contiene el escenario y lo que sucede en la nave alien
+/**
+*@brief Esta función contiene el escenario y lo que sucede en la nave alien
 *@param no recibe parámetros
 *@return void
 */
@@ -316,7 +321,8 @@ void sala_de_prisioneros(){
         prisioneros();
 	}
 }
-/**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
+/**
+*@brief Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
 *@param numeroEnCadena, recibe una cadena de texto
 *@return regresa un dato booleano, retorna 1 si los datos ingresados son enteros y 0 si son caracteres
 */
