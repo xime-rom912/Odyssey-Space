@@ -3,13 +3,11 @@
 #include <string>
 #include <assert.h>
 #include <conio.h>
-#include<thread>
 
 using namespace std;
 
 int ValidarEntrada();
 bool isValidInt(string);
-void introduc(string nomb_usu);
 void cuartelMilitar ();
 void armeria();
 int buscarTuMismo();
@@ -22,9 +20,12 @@ int acceso;
 struct Personaje{
     int vida = 100;
     void quitar_vid(int cant) { vida -= cant;}
+    void aum_vid(int cant) { vida += cant;}
 }carac;
 
-
+int time (){
+    
+}
 void g_over(){
     system("cls");
     system("color 0C");
@@ -53,7 +54,6 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
     system("cls");
     cout<<"\t\t\tInstrucciones: "
         <<"\nLee atentamente la historia que aparece y toma tu desicion sabiamente."
-        <<"\nEmpezaras con 100 puntos de vida la cual podras ganar mas o perder dependiendo en tus deciciones"
         <<"\nDigita el numero correspondiente a cada mision"
         <<"\nEso es todo, esperamos que disfrutes el juego."
         <<"\n-Presiona cualquier tecla para seguir-"<<endl;
@@ -81,14 +81,12 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 
     }
 }
-
 void nombre() {
 	string nombre;
 	cout << "Escribe tu nombre por favor: ";
 	cin >> nombre;
 	introduc(nombre);
 }
-
 void cuartelMilitar (){
     system("cls");
     int choice;
@@ -165,11 +163,17 @@ int familia(){
     system("cls");
     cout<<"Los has liberado, ahora tienes que salir de ahi, pero te encuentras con un"
         <<"\nelite, luchas contra el y...";
-    if(carac.vida>=80){
-        cout<<"\nlo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n";
+    if(vida_extra != NULL)
+        carac.aum_vid(*vida_extra);
+    cout<<carac.vida;
+    if(carac.vida>=70){
+        cout<<"\nlo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n"
+            <<"\n**************************FIN********************************\n\n";
     }else{
-        cout<<"\nCon las heridas que tienes no logras vencerlo, pero tu familia ha escapado de la tierra\n";
-        g_over();
+        cout<<"\nCon las heridas que tienes no logras vencerlo, pero tu familia ha escapado de la tierra\n"
+            <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
+            if(getch())
+                g_over();
     }
 
 
@@ -195,8 +199,8 @@ int prisioneros(){
             break;
         case 2:
             cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
-            " las granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
-            "seras recordado como un heroe.\n\n";
+            "\nlas granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
+            "\nseras recordado como un heroe.\n\n";
             cout<<"\n***************************************************FIN*********************************************************\n\n";
             break;
 
@@ -216,7 +220,6 @@ int main()
 	cout << "\t2. Salir" << endl;
 	cout << "Tu respuesta es: ";
 	acceso = ValidarEntrada();
-    
 	if (acceso == 1) {
 		nombre();
 	}else{
@@ -226,11 +229,8 @@ int main()
 	return 0;
 }
 
-/**
-*@brief Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida
-*@param no recibe parametros
-*@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda
-*/
+//Esta función recibe un entero que le permite identificar la
+//opción seleccionada una vez de haber pasado por la validacion de cadena o entero
 int ValidarEntrada() {
 
 	string eleccionCadena;
@@ -272,8 +272,7 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
-/**
-*@brief Esta función contiene el escenario y lo que sucede en la nave alien
+/**Esta función contiene el escenario y lo que sucede en la nave alien
 *@param no recibe parámetros
 *@return void
 */
@@ -321,8 +320,7 @@ void sala_de_prisioneros(){
         prisioneros();
 	}
 }
-/**
-*@brief Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
+/**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
 *@param numeroEnCadena, recibe una cadena de texto
 *@return regresa un dato booleano, retorna 1 si los datos ingresados son enteros y 0 si son caracteres
 */
@@ -349,4 +347,3 @@ bool isValidInt(string numeroEnCadena) {
 	}
 	return valido;
 }
-
