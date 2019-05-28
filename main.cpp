@@ -32,8 +32,8 @@ int time (int seg){
 }
 /**
 *@brief Indica al usuario que el juego ha terminado fatalmente.
-*@param no recibe parámetros
-*@return retorna void
+*@param No recibe parámetros
+*@return Retorna void
 */
 void g_over(){
     system("cls");
@@ -42,8 +42,8 @@ void g_over(){
 }
 /**
 *@brief En esta función se desarrolla la trama en la armería.
-*@param no recibe parámetros
-*@return retorna void
+*@param No recibe parámetros
+*@return Retorna void
 */
 void armeria(){
     system("cls");
