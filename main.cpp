@@ -28,6 +28,11 @@ struct Personaje{
 int time (){
     
 }
+/**
+*@brief Indica al usuario que el juego ha terminado fatalmente.
+*@param no recibe parámetros
+*@return retorna void
+*/
 void g_over(){
     system("cls");
     system("color 0C");
