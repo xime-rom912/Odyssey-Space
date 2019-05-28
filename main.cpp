@@ -3,9 +3,11 @@
 #include <string>
 #include <assert.h>
 #include <conio.h>
+#include<thread>
 
 using namespace std;
 
+void introduc(string nomb_usu);
 int ValidarEntrada();
 bool isValidInt(string);
 void cuartelMilitar ();
@@ -54,7 +56,8 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
     system("cls");
     cout<<"\t\t\tInstrucciones: "
         <<"\nLee atentamente la historia que aparece y toma tu desicion sabiamente."
-        <<"\nDigita el numero correspondiente a cada mision"
+        <<"\nEmpezaras con 100 puntos de vida la cual podras ganar mas o perder dependiendo en tus deciciones"
+	<<"\nDigita el numero correspondiente a cada mision"
         <<"\nEso es todo, esperamos que disfrutes el juego."
         <<"\n-Presiona cualquier tecla para seguir-"<<endl;
     if(getch()){
@@ -179,7 +182,12 @@ int familia(){
 
     return 0;
 }
-
+/**
+*@brief Esta función contiene el escenario y lo que sucede en la nave alien
+/**Esta función contiene el escenario y lo que sucede en la nave alien
+*@param no recibe parámetros
+*@return void
+*/
 int prisioneros(){
     system("cls");
     cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
@@ -229,8 +237,11 @@ int main()
 	return 0;
 }
 
-//Esta función recibe un entero que le permite identificar la
-//opción seleccionada una vez de haber pasado por la validacion de cadena o entero
+/**
+*@brief Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida
+*@param no recibe parametros
+*@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda
+*/
 int ValidarEntrada() {
 
 	string eleccionCadena;
@@ -320,6 +331,8 @@ void sala_de_prisioneros(){
         prisioneros();
 	}
 }
+/**
+*@brief Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
 /**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
 *@param numeroEnCadena, recibe una cadena de texto
 *@return regresa un dato booleano, retorna 1 si los datos ingresados son enteros y 0 si son caracteres
