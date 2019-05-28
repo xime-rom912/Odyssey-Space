@@ -89,6 +89,11 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 
     }
 }
+/**
+*@brief Captura el nombre del usuario
+*@param no recibe parámetros
+*@return retorna void
+*/
 void nombre() {
 	string nombre;
 	cout << "Escribe tu nombre por favor: ";
