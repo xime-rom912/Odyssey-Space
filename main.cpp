@@ -111,6 +111,11 @@ void nombre() {
 	cin >> nombre;
 	introduc(nombre);
 }
+/**
+*@brief En esta función el jugador decidirá sus primeras acciones.
+*@param No recibe parárametros.
+*@return Retorna void.
+*/
 void cuartelMilitar (){
     system("cls");
     int choice;
