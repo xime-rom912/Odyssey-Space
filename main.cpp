@@ -8,6 +8,7 @@ using namespace std;
 
 int ValidarEntrada();
 bool isValidInt(string);
+void introduc(string nomb_usu);
 void cuartelMilitar ();
 void armeria();
 int buscarTuMismo();
