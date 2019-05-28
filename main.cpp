@@ -40,7 +40,11 @@ void g_over(){
     system("color 0C");
     cout<<"                          GAME OVER";
 }
-
+/**
+*@brief En esta función se desarrolla la trama en la armería.
+*@param no recibe parámetros
+*@return retorna void
+*/
 void armeria(){
     system("cls");
     cout<<"Sales del cuartel armado hasta las chanclas"
