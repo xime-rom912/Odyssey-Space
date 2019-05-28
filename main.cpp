@@ -192,12 +192,7 @@ int familia(){
 
     return 0;
 }
-/**
-*@brief Esta función contiene el escenario y lo que sucede en la nave alien
-/**Esta función contiene el escenario y lo que sucede en la nave alien
-*@param no recibe parámetros
-*@return void
-*/
+
 int prisioneros(){
     system("cls");
     cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
@@ -293,10 +288,12 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
-/**Esta función contiene el escenario y lo que sucede en la nave alien
+/**
+*@brief Esta función contiene el escenario y lo que sucede en la nave alien
 *@param no recibe parámetros
 *@return void
 */
+
 void nave_alienigena(){
     system("cls");
 	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
@@ -343,7 +340,6 @@ void sala_de_prisioneros(){
 }
 /**
 *@brief Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
-/**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
 *@param numeroEnCadena, recibe una cadena de texto
 *@return regresa un dato booleano, retorna 1 si los datos ingresados son enteros y 0 si son caracteres
 */
