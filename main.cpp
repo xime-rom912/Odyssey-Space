@@ -102,8 +102,8 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
 }
 /**
 *@brief Captura el nombre del usuario.
-*@param no recibe parámetros.
-*@return retorna void.
+*@param No recibe parámetros.
+*@return Retorna void.
 */
 void nombre() {
 	string nombre;
@@ -333,6 +333,11 @@ void nave_alienigena(){
 			g_over();
 	}
 }
+/**
+*@brief Aquí se desarrollan los sucesos de la sala de prisioneros.
+*@param No recibe parámetros
+*@return Retorna void.
+*/
 void sala_de_prisioneros(){
 	system("cls");
 	cout<<"Te encuentras con las celdas de los prisioneros y has identificado la celda"
