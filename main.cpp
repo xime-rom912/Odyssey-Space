@@ -28,6 +28,11 @@ struct Personaje{
 int time (){
     return 0;
 }
+/**
+*@brief Indica al usuario que el juego ha terminado fatalmente.
+*@param no recibe parámetros
+*@return retorna void
+*/
 void g_over(){
     system("cls");
     system("color 0C");
@@ -53,9 +58,9 @@ void armeria(){
     }
 }
 /**
-*@brief Esta funcion presenta las instrucciones del juego 
-*@param Recibe una cadena de texto que contiene el nombre del usuario para desplegarlo en pantalla a través de esta función
-*@return retorna void
+*@brief Esta funcion presenta las instrucciones del juego. 
+*@param Recibe una cadena de texto que contiene el nombre del usuario para desplegarlo en pantalla a través de esta función.
+*@return retorna void.
 */
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
     system("cls");
@@ -90,9 +95,9 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
     }
 }
 /**
-*@brief Captura el nombre del usuario
-*@param no recibe parámetros
-*@return retorna void
+*@brief Captura el nombre del usuario.
+*@param no recibe parámetros.
+*@return retorna void.
 */
 void nombre() {
 	string nombre;
@@ -192,12 +197,7 @@ int familia(){
 
     return 0;
 }
-/**
-*@brief Esta función contiene el escenario y lo que sucede en la nave alien
-/**Esta función contiene el escenario y lo que sucede en la nave alien
-*@param no recibe parámetros
-*@return void
-*/
+
 int prisioneros(){
     system("cls");
     cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
@@ -250,9 +250,9 @@ int main()
 }
 
 /**
-*@brief Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida
-*@param no recibe parametros
-*@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda
+*@brief Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida.
+*@param no recibe parametros.
+*@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda.
 */
 int ValidarEntrada() {
 
@@ -295,10 +295,12 @@ int ValidarEntrada() {
 	} while (key != true);
 	return 0;
 }
-/**Esta función contiene el escenario y lo que sucede en la nave alien
-*@param no recibe parámetros
-*@return void
+/**
+*@brief Esta función contiene el escenario y lo que sucede en la nave alien.
+*@param no recibe parámetros.
+*@return void.
 */
+
 void nave_alienigena(){
     system("cls");
 	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
@@ -344,10 +346,9 @@ void sala_de_prisioneros(){
 	}
 }
 /**
-*@brief Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
-/**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
-*@param numeroEnCadena, recibe una cadena de texto
-*@return regresa un dato booleano, retorna 1 si los datos ingresados son enteros y 0 si son caracteres
+*@brief Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano.
+*@param numeroEnCadena, recibe una cadena de texto.
+*@return regresa un dato booleano, retorna 1 si los datos ingresados son enteros y 0 si son caracteres.
 */
 bool isValidInt(string numeroEnCadena) {
 	int inicio = 0;
