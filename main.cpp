@@ -203,6 +203,11 @@ int familia(){
 
     return 0;
 }
+/**
+*@brief Aquí se determina el final de la historia. Se presenta la última decisión para ganar o perder.
+*@param No recibe parámetros
+*@return Retorna void.
+*/
 
 int prisioneros(){
     system("cls");
