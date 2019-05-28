@@ -24,7 +24,9 @@ struct Personaje{
     void quitar_vid(int cant) { vida -= cant;}
     void aum_vid(int cant) { vida += cant;}
 }carac;
-
+/**
+*@brief Esta función
+*/
 int tiempo (int seg){
     seg += 1;
     tiempo(seg);
