@@ -25,7 +25,7 @@ struct Personaje{
     void aum_vid(int cant) { vida += cant;}
 }carac;
 /**
-*@brief Esta función
+*@brief Esta función....
 */
 int tiempo (int seg){
     seg += 1;
@@ -159,7 +159,6 @@ void cuartelMilitar (){
 *@param Esta función no recibe parámetros.
 *@return retorna 0.
 */
-
 int buscarTuMismo()
 {
     system("cls");
@@ -194,7 +193,11 @@ int buscarTuMismo()
     }
 	return 0;
 }
-
+/**
+*@brief Esta función contine la historia de la primera opción de la función sala_de_prisioneros. Además se presenta un final alternativo.
+*@param No recibe parámetros.
+*@return Retorna 0, indica que el juego ha terminado.
+*/
 int familia(){
     system("cls");
     cout<<"Los has liberado, ahora tienes que salir de ahi, pero te encuentras con un"
@@ -220,7 +223,6 @@ int familia(){
 *@param No recibe parámetros.
 *@return Retorna void.
 */
-
 int prisioneros(){
     system("cls");
     cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
@@ -323,7 +325,6 @@ int ValidarEntrada() {
 *@param no recibe parámetros.
 *@return void.
 */
-
 void nave_alienigena(){
     system("cls");
 	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
