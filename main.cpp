@@ -317,7 +317,8 @@ void sala_de_prisioneros(){
         prisioneros();
 	}
 }
-/**Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
+/**
+*@brief Esta función determina si los valores ingresados son enteros o cadenas de texto, resive un string y devuelve un valor booleano
 *@param numeroEnCadena, recibe una cadena de texto
 *@return regresa un dato booleano, retorna 1 si los datos ingresados son enteros y 0 si son caracteres
 */
