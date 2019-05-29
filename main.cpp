@@ -24,6 +24,7 @@ void (*fun[])()={nombre,salir};
 
 struct Personaje{
     int vida = 100;
+    int puntos = 0;
     void quitar_vid(int cant) { vida -= cant;}
     void aum_vid(int cant) { vida += cant;}
 }carac;
@@ -231,16 +232,22 @@ void prisioneros() {
 		<< "\n\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
 		<< "\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo."
 		<< "\n\nLa decision es tuya: ";
-	int acceso;
+	int acceso=ValidarEntrada();
 
 	switch (acceso) {
 	case 1:
-		fin("\n\n\nHacer tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n\n\n");
+		system("cls");
+		fin("\nHaces tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n");
+		cout<<"Puntuación"<<endl;
+		fin(carac.puntos);
 		break;
 	case 2:
+		system("cls");
 		fin("Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
 			"\nlas granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
 			"\nseras recordado como un heroe.\n\n");
+		cout<<"Puntuación"<<endl;
+		fin(carac.puntos);
 		cout << "\n***************************************************FIN*********************************************************\n\n";
 		break;
 
