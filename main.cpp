@@ -3,6 +3,7 @@
 #include <string>
 #include <assert.h>
 #include <conio.h>
+#include <iomanip>
 #include<thread>
 
 using namespace std;
@@ -46,6 +47,7 @@ void g_over(){
 */
 void armeria(){
     system("cls");
+    carac.puntos += 40;
     cout<<"Sales del cuartel armado hasta las chanclas"
         <<"\nQue decides?"
         <<"\n1.Subes a tu nave" << "\n2.Subes a la nave alinigena"
@@ -53,6 +55,7 @@ void armeria(){
     acceso = ValidarEntrada();
     if (acceso == 1) {
         system("cls");
+        carac.puntos -= 90;
         cout<<"Te diriges a la base, descubren tu nave, abren fuego y mueres"
             <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
         if(getch())
@@ -122,13 +125,12 @@ void salir(){
 */
 void cuartelMilitar (){
     system("cls");
-    int choice;
+    carac.puntos += 12;
     cout<<"En el cuartel militar hay un sujeto moribundo, puedes pedirle ayuda, pero su condicion podria causarte"
         <<"\nnada mas que problemas"
         <<"\nQue decides hacer?"
         <<"\n1.Ayudar al moribundo"<<   "\n2.Seguir por tu cuenta"
         <<"\n\nTu desicion: ";
-    //cin>> choice;
     acceso = ValidarEntrada();
 	if (acceso == 1) {
         system("cls");
@@ -168,6 +170,7 @@ int buscarTuMismo()
         <<"\nQue decides hacer?"
         <<"\n1.Te escabulles lentamente sin que te vea hacia la armeria"<<"\n2.Te dejas llevar por tu enojo y lo atacas"
         <<"\n\nTu desicion: ";
+        carac.puntos += 70;
     acceso = ValidarEntrada();
     if (acceso == 1){
         armeria();
@@ -215,6 +218,7 @@ int familia(){
 
 template <typename anfibio>
 void fin(anfibio final) {
+	carac.puntos += 5;
 	cout << final << endl;
 }
 /**
@@ -237,17 +241,21 @@ void prisioneros() {
 	switch (acceso) {
 	case 1:
 		system("cls");
-		fin("\nHaces tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n");
-		cout<<"Puntuación"<<endl;
+		fin("Haces tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n");
+		cout<<"Puntuacion: "<<endl;
 		fin(carac.puntos);
+		if(getch())
+                g_over();
 		break;
 	case 2:
 		system("cls");
 		fin("Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
 			"\nlas granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
 			"\nseras recordado como un heroe.\n\n");
-		cout<<"Puntuación"<<endl;
+			cout<<"Puntuacion: "<<endl;
 		fin(carac.puntos);
+		cout<<"Puntos de vida: "<<endl;
+		fin(carac.vida);
 		cout << "\n***************************************************FIN*********************************************************\n\n";
 		break;
 
@@ -334,6 +342,7 @@ void nave_alienigena(){
 		cout<<"------------Perdiste 15 puntos de vida-------------"
             <<"\nHas encontrado el lugar donde estan los prisioneros"
             <<"\n\n-Presiona cualquier tecla para seguir-";
+            carac.puntos += 90;
         if(getch())
             sala_de_prisioneros();
 	}
@@ -362,9 +371,11 @@ void sala_de_prisioneros(){
         <<"\n\nTu desicion: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
+		carac.puntos += 50;
 		familia();
 	}
 	else if(acceso==2) {
+		carac.puntos += 100;
         prisioneros();
 	}
 }
