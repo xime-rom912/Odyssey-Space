@@ -29,7 +29,7 @@ struct Personaje{
 }carac;
 
 /**
-*@brief Indica al usuario que el juego ha terminado fatalmente.
+*@brief Indica al usuario que la historia del juego ha terminado fatalmente.
 *@param no recibe parámetros
 *@return retorna void
 */
@@ -38,7 +38,11 @@ void g_over(){
     system("color 0C");
     cout<<"                          GAME OVER";
 }
-
+/**
+*@brief En esta función se desarrolla la trama en la armeria.
+*@param no recibe parámetros
+*@return retorna void
+*/
 void armeria(){
     system("cls");
     cout<<"Sales del cuartel armado hasta las chanclas"
@@ -110,6 +114,11 @@ void salir(){
     system("color 1A");
     cout<<"Gracias por jugar Odyssey Space\n";
 }
+/**
+*@brief En esta función el jugador decide sus primeras acciones.
+*@param No recibe parárametros.
+*@return Retorna void.
+*/
 void cuartelMilitar (){
     system("cls");
     int choice;
@@ -207,7 +216,11 @@ template <typename anfibio>
 void fin(anfibio final) {
 	cout << final << endl;
 }
-
+/**
+*@brief Aquí se determina el final de la historia. Se presenta la última decisión para ganar o perder.
+*@param No recibe parámetros
+*@return Retorna void.
+*/
 void prisioneros() {
 	system("cls");
 	cout << "\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
@@ -233,7 +246,6 @@ void prisioneros() {
 
 	}
 }
-
 
 int main()
 {
@@ -300,7 +312,6 @@ int ValidarEntrada() {
 *@param no recibe parámetros.
 *@return void.
 */
-
 void nave_alienigena(){
     system("cls");
 	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
@@ -327,6 +338,11 @@ void nave_alienigena(){
 			g_over();
 	}
 }
+/**
+*@brief Aquí se desarrollan los sucesos de la sala de prisioneros.
+*@param No recibe parámetros
+*@return Retorna void.
+*/
 void sala_de_prisioneros(){
 	system("cls");
 	cout<<"Te encuentras con las celdas de los prisioneros y has identificado la celda"
