@@ -72,7 +72,7 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
         <<"\n-Presiona cualquier tecla para seguir-"<<endl;
     if(getch()){
         system("cls");//borra lo escrito en la consola
-        cout << "\tTe damos la bienvenida " << nomb_usu << "\nEres un vajero espacial asignado a una mision de exploracion en el planeta X910,"
+        cout << "\tTe damos la bienvenida " << nomb_usu << "\nEres un viajero espacial asignado a una mision de exploracion en el planeta X910,"
             << "\nal volver a la tierra despues de la larga mision, te das cuenta de que ha sido atacada por una raza de alienigenas "
             << "\nlengendarios y ancestrales. Al ir a buscar a tu familia te enteras de que han sido raptados"
             << "\ny no hay ningun rastro de ellos. La decision es tuya, puedes formar tu destino para lograr rescatar a tu esposa e hija."
@@ -203,36 +203,37 @@ int familia(){
     return 0;
 }
 
-int prisioneros(){
-    system("cls");
-    cout<<"\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
-        <<"\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados,"
-        <<"\npara escapar del lugar, se inicia un enfrentamiento y se encuentran con el lider alien y entre todos tratan de matarlo, "
-        <<"\nal enfrentarlo muchos mueren, tu por la espalda mientras otros lo estan distrayendo, con una espada de energia lo apuñalas"
-        <<"\nen el corazon, lo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
-        <<"\n\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
-        <<"\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo."
-        <<"\n\nLa decision es tuya: ";
-        acceso=ValidarEntrada();
-
-        switch (acceso){
-        case 1:
-                cout<<"\n\n\nHacer tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n\n\n";
-                g_over();
-            break;
-        case 2:
-            cout<<"Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
-            "\nlas granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
-            "\nseras recordado como un heroe.\n\n";
-            cout<<"\n***************************************************FIN*********************************************************\n\n";
-            break;
-
-        }
-
-
-    return 0;
-
+template <typename anfibio>
+void fin(anfibio final) {
+	cout << final << endl;
 }
+
+void prisioneros() {
+	system("cls");
+	cout << "\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
+		<< "\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados,"
+		<< "\npara escapar del lugar, se inicia un enfrentamiento y se encuentran con el lider alien y entre todos tratan de matarlo, "
+		<< "\nal enfrentarlo muchos mueren, tu por la espalda mientras otros lo estan distrayendo, con una espada de energia lo apuñalas"
+		<< "\nen el corazon, lo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
+		<< "\n\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
+		<< "\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo."
+		<< "\n\nLa decision es tuya: ";
+	int acceso;
+
+	switch (acceso) {
+	case 1:
+		fin("\n\n\nHacer tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n\n\n");
+		break;
+	case 2:
+		fin("Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
+			"\nlas granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
+			"\nseras recordado como un heroe.\n\n");
+		cout << "\n***************************************************FIN*********************************************************\n\n";
+		break;
+
+	}
+}
+
 
 int main()
 {
