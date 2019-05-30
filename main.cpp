@@ -22,8 +22,9 @@ int opci = 0;
 int acceso;
 void (*fun[])()={nombre,salir};
 
-/**Esta estructura es utilizada para declarar las caracteristicas del personaje
-*/
+/**
+*@struct Personaje
+*@brief Contiene la vida y los puntos del jugador.
 struct Personaje{
     int vida = 100;
     int puntos = 0;
