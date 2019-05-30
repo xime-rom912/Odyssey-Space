@@ -229,8 +229,8 @@ void buscarTuMismo()
     }else {
         system("cls");
         carac.quitar_vid(20);
-        cout<<"Te acercas lentamente a tu enemigo por detras, pero por accidente tiras un par de cajas causando lago de ruido"
-            <<"\nesto hace que se de cuenta de tu presencia y te ataca tambien. Te golpea fuertemente empujandote hacia"
+        cout<<"Te acercas lentamente a tu enemigo por detras, pero por accidente tiras un par de cajas causando algo de ruido"
+            <<"\nesto hace que se de cuenta de tu presencia y te ataque tambien. Te golpea fuertemente empujandote hacia"
             <<"\nuna esquina en donde encuentras un viejo tubo oxidado, el cual tomas para defenderte. Tu enemigo se abalanza"
             <<"\nhacia ti para acabar contigo, pero logras esquivarlo y le clavas el tubo por la espalda eliminandolo"
             <<"\n\n------------Perdiste 20 puntos de vida-------------"
