@@ -36,6 +36,7 @@ void (*fun[])()={nombre,salir};
 int *vida_extra = NULL; //Puntero
 int opci = 0;
 int acceso;
+clock_t t;
 /**
 *@struct Personaje
 *@brief Contiene la vida y los puntos del jugador.
@@ -46,7 +47,16 @@ struct Personaje{
     void quitar_vid(int cant) { vida -= cant;}
     void aum_vid(int cant) { vida += cant;}
 }carac;
-
+/**
+*@brief Esta es la funcion que nos ayudara  medir el tiempo desde que el jugador selecciona 1 del menu
+*@param Resibe un parametro tipo clock_t que proporciona cantidad de tics de reloj transcurridos 
+*@return Retorna void.
+*/
+void reloj(clock_t t)
+{
+    t = clock();
+    return;
+}
 /**
 *@brief En esta función utilizamos un template para poder administrar los diferentes finales
 *@param Resibe un parametro de tipo "anfibio" que es nuestro comodin para que resiba dierentes tipos de datos.
@@ -99,10 +109,12 @@ void armeria(){
 */
 void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, resive como parametro el nombre del usuario
     system("cls");
+    thread tiempo (reloj, t);
+    tiempo.join();
     cout<<"\t\t\tInstrucciones: "
         <<"\nLee atentamente la historia que aparece y toma tu desicion sabiamente."
         <<"\nEmpezaras con 100 puntos de vida la cual podras ganar mas o perder dependiendo en tus deciciones"
-	<<"\nDigita el numero correspondiente a cada mision"
+        <<"\nDigita el numero correspondiente a cada mision"
         <<"\nEso es todo, esperamos que disfrutes el juego."
         <<"\n-Presiona cualquier tecla para seguir-"<<endl;
     if(getch()){
@@ -164,7 +176,6 @@ void cuartelMilitar (){
         <<"\nQue decides hacer?"
         <<"\n1.Ayudar al moribundo"<<   "\n2.Seguir por tu cuenta"
         <<"\n\nTu desicion: ";
-    //cin>> choice;
     acceso = ValidarEntrada();
 	if (acceso == 1) {
         system("cls");
@@ -240,15 +251,19 @@ void familia(){
     system("cls");
     cout<<"Los has liberado, ahora tienes que salir de ahi, pero te encuentras con un"
         <<"\nelite, luchas contra el y...";
-    if(vida_extra != NULL)
+    if(vida_extra != NULL){
         carac.aum_vid(*vida_extra);
+        delete vida_extra;
+    }
     if(carac.vida>=70){
         cout<<"\nlo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n";
         cout<<"Puntuacion: ";
         fin(carac.puntos);
+        t = clock()-t;
+        cout<<"\nTiempo = "<<float(t)/CLOCKS_PER_SEC<<" segundos"<<endl;
         cout<<"\n**************************FIN********************************\n\n";
     }else{
-        cout<<"\nCon las heridas que tienes no logras vencerlo, pero tu familia ha escapado de la tierra\n"
+        cout<<"\ncon las heridas que tienes no logras vencerlo, pero tu familia ha escapado de la tierra\n"
             <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
             if(getch())
                 g_over();
@@ -266,8 +281,8 @@ void prisioneros() {
 		<< "\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados,"
 		<< "\npara escapar del lugar, se inicia un enfrentamiento y se encuentran con el lider alien y"
         << "\nentre todos tratan de matarlo, al enfrentarlo muchos mueren, tu por la espalda mientras"
-		<< "\n otros lo estan distrayendo, con una espada de energia lo apuñalas en el corazo"
-		<< "\nn, lo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
+		<< "\notros lo estan distrayendo, con una espada de energia lo apuñalas en el corazon,"
+		<< "\nlo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
 		<< "\n\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
 		<< "\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo."
 		<< "\n\nLa decision es tuya: ";
@@ -287,6 +302,8 @@ void prisioneros() {
 			"\nseras recordado como un heroe.\n\n");
 		cout<<"Puntuacion: ";
         fin(carac.puntos);
+        t = clock()-t;
+        cout<<"\nTiempo = "<<float(t)/CLOCKS_PER_SEC<<" segundos"<<endl;
 		cout << "\n***************************************************FIN*********************************************************\n\n";
 		break;
 
@@ -446,5 +463,4 @@ bool isValidInt(string numeroEnCadena) {
 			valido = false;
 	}
 	return valido;
-}
-      
+}    
