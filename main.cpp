@@ -116,8 +116,8 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
     tiempo.join();
     cout<<"\t\t\tInstrucciones: "
         <<"\nLee atentamente la historia que aparece y toma tu desicion sabiamente."
-        <<"\nEmpezaras con 100 puntos de vida la cual podras ganar mas o perder dependiendo en tus deciciones"
-        <<"\nDigita el numero correspondiente a cada mision"
+        <<"\nEmpezaras con 100 puntos de vida la cual podras ganar mas o perder dependiendo en tus deciciones."
+        <<"\nDigita el numero correspondiente a cada mision."
         <<"\nEso es todo, esperamos que disfrutes el juego."
         <<"\n-Presiona cualquier tecla para seguir-"<<endl;
     if(getch()){
@@ -183,8 +183,8 @@ void cuartelMilitar (){
 	if (acceso == 1) {
         system("cls");
 		cout <<"Wow, el moribundo ha probado ser realmente util, parece ser un militar retirado o algo asi"
-            <<"\nMe ha dado informacion valiosa, me ha dicho donde esconde su arsenal lo que queda de la humanidad"
-            <<"\nPero mas importante me ha dado la localización de los rehenes, el apenas escapo de ahí no esta lejos"
+            <<"\nMe ha dado informacion valiosa, me ha dicho donde esconde su arsenal, lo que queda de la humanidad"
+            <<"\nPero mas importante me ha dado la localizacion de los rehenes, el apenas escapo de ahi, no esta lejos."
             <<"\npuedo recuperar a mi familia pronto! Si pierdo tiempo en ir a buscar las armas podrian"
             <<"\nre localizar el campo de concentracion y de nuevo no sabria donde buscar, de poco me servirian"
             <<"\nQue decides hacer?"
@@ -196,7 +196,7 @@ void cuartelMilitar (){
             armeria();
         } else {
             system("cls");
-            cout<<"Mueres por la falta de armas para defenderte"
+            cout<<"Mueres por la falta de armas para defenderte."
                 <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
             if(getch())
                 g_over();
@@ -217,12 +217,12 @@ void buscarTuMismo()
     carac.puntos += 70;
     cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has"
         <<"\nenterado de la cruda verdad. Una extrana raza de extraterrestres ha invadido el planeta mientras"
-        <<"\nestas ausente y ha exlavizado a la mayoria de los humanos en la tierra"
+        <<"\nestas ausente y ha exclavizado a la mayoria de los humanos en la tierra"
         <<"\nincluyendo a tu familia..."
-        <<"\nSales desconcertado de la sala y justo afuera te encuentras con un alien enemigo que esta distraido"
+        <<"\nSales desconcertado de la sala y justo afuera te encuentras con un alien enemigo que esta distraido."
         <<"\nQue decides hacer?"
         <<"\n1.Te escabulles lentamente sin que te vea hacia la armeria"<<"\n2.Te dejas llevar por tu enojo y lo atacas"
-        <<"\n\nTu desicion: ";
+        <<"\n\nTu decision: ";
     acceso = ValidarEntrada();
     if (acceso == 1){
         armeria();
@@ -279,11 +279,11 @@ void familia(){
 */
 void prisioneros() {
 	system("cls");
-	cout<< "Decides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste"
-        << "\nhay soldado entrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo"
-		<< "\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados,"
+	cout<< "Decides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas que liberaste"
+        << "\nhay soldado entrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas"
+		<< "\nde aliens derrotados,"
 		<< "\npara escapar del lugar, se inicia un enfrentamiento y se encuentran con el lider alien y"
-        << "\nentre todos tratan de matarlo, al enfrentarlo muchos mueren, tu por la espalda mientras"
+        << "\nentre todos tratan de matarlo, al enfrentarlo muchos mueren, tu por la espalda te acercas mientras,"
 		<< "\notros lo estan distrayendo, con una espada de energia lo apuñalas en el corazon,"
 		<< "\nlo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
 		<< "\n\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
