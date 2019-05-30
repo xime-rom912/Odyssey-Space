@@ -25,6 +25,7 @@ void (*fun[])()={nombre,salir};
 /**
 *@struct Personaje
 *@brief Contiene la vida y los puntos del jugador.
+*/
 struct Personaje{
     int vida = 100;
     int puntos = 0;
