@@ -8,6 +8,7 @@
 *Luis Enrique Fernández Reza
 *@versión 29/05/19
 */
+
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -16,6 +17,7 @@
 #include<thread>
 
 using namespace std;
+
 /**
 *Encabezados de subprogramas
 */
@@ -37,6 +39,7 @@ int *vida_extra = NULL; //Puntero
 int opci = 0;
 int acceso;
 clock_t t;
+
 /**
 *@struct Personaje
 *@brief Contiene la vida y los puntos del jugador.
