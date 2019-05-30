@@ -1,3 +1,13 @@
+/**
+*Odyssey-Space
+*@autores
+*Ximena Romero Chavez 
+*Javier Andres Tarango Fierro
+*Juan Daniel Villegas Terrazas 329545
+*Ricardo Corral Sánchez 329606
+*Luis Enrique Fernández Reza
+*@versión 29/05/19
+*/
 #include <iostream>
 #include <windows.h>
 #include <string>
