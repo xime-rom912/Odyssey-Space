@@ -259,7 +259,7 @@ void familia(){
         delete vida_extra;
     }
     if(carac.vida>=70){
-        cout<<"\nlo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n";
+        cout<<"\nlo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n\n";
         cout<<"Puntuacion: ";
         fin(carac.puntos);
         t = clock()-t;
