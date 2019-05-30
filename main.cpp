@@ -90,7 +90,7 @@ void armeria(){
     carac.puntos += 40;
     cout<<"Sales del cuartel armado hasta las chanclas"
         <<"\nQue decides?"
-        <<"\n1.Subes a tu nave" << "\n2.Subes a la nave alinigena"
+        <<"\n1.Subes a tu nave" << "\n2.Subes a la nave alienigena"
         << "\n\nTu desicion: ";
     acceso = ValidarEntrada();
     if (acceso == 1) {
@@ -124,7 +124,7 @@ void introduc(string nomb_usu) { //	Esta es la funcion del inicio del juego, res
         system("cls");//borra lo escrito en la consola
         cout << "\tTe damos la bienvenida " << nomb_usu << "\nEres un viajero espacial asignado a una mision de exploracion en el planeta X910,"
             << "\nal volver a la tierra despues de la larga mision, te das cuenta de que ha sido atacada por una raza de alienigenas "
-            << "\nlengendarios y ancestrales. Al ir a buscar a tu familia te enteras de que han sido raptados"
+            << "\nlegendarios y ancestrales. Al ir a buscar a tu familia te enteras de que han sido raptados,"
             << "\ny no hay ningun rastro de ellos. La decision es tuya, puedes formar tu destino para lograr rescatar a tu esposa e hija."
             << "\nQue decides hacer?"
             << "\n1. Ir al cuartel militar."
