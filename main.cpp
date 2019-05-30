@@ -3,7 +3,6 @@
 #include <string>
 #include <assert.h>
 #include <conio.h>
-#include <iomanip>
 #include<thread>
 
 using namespace std;
@@ -15,7 +14,7 @@ int ValidarEntrada();
 bool isValidInt(string);
 void cuartelMilitar ();
 void armeria();
-int buscarTuMismo();
+void buscarTuMismo();
 void nave_alienigena();
 void sala_de_prisioneros();
 int *vida_extra = NULL;
@@ -29,6 +28,7 @@ struct Personaje{
     void quitar_vid(int cant) { vida -= cant;}
     void aum_vid(int cant) { vida += cant;}
 }carac;
+
 
 /**
 *@brief Indica al usuario que la historia del juego ha terminado fatalmente.
@@ -47,7 +47,6 @@ void g_over(){
 */
 void armeria(){
     system("cls");
-    carac.puntos += 40;
     cout<<"Sales del cuartel armado hasta las chanclas"
         <<"\nQue decides?"
         <<"\n1.Subes a tu nave" << "\n2.Subes a la nave alinigena"
@@ -55,7 +54,6 @@ void armeria(){
     acceso = ValidarEntrada();
     if (acceso == 1) {
         system("cls");
-        carac.puntos -= 90;
         cout<<"Te diriges a la base, descubren tu nave, abren fuego y mueres"
             <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
         if(getch())
@@ -113,9 +111,14 @@ void nombre() {
 	cin >> nombre;
 	introduc(nombre);
 }
+/**
+*@brief Esta función es la segunda opcion del menu, es para finalizar el juego.
+*@param no recibe parametros.
+*@return regresa un void, es decir, no devuelve nungun valor.
+*/
 void salir(){
     system("cls");
-    system("color 1A");
+    system("color 0A");
     cout<<"Gracias por jugar Odyssey Space\n";
 }
 /**
@@ -125,12 +128,13 @@ void salir(){
 */
 void cuartelMilitar (){
     system("cls");
-    carac.puntos += 12;
+    int choice;
     cout<<"En el cuartel militar hay un sujeto moribundo, puedes pedirle ayuda, pero su condicion podria causarte"
         <<"\nnada mas que problemas"
         <<"\nQue decides hacer?"
         <<"\n1.Ayudar al moribundo"<<   "\n2.Seguir por tu cuenta"
         <<"\n\nTu desicion: ";
+    //cin>> choice;
     acceso = ValidarEntrada();
 	if (acceso == 1) {
         system("cls");
@@ -158,8 +162,12 @@ void cuartelMilitar (){
 	}
 
 }
-
-int buscarTuMismo()
+/**
+*@brief En esta función se muestra un camino en donde el jugador puede perder vida.
+*@param No recibe parárametros.
+*@return Retorna void.
+*/
+void buscarTuMismo()
 {
     system("cls");
     cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has"
@@ -170,7 +178,6 @@ int buscarTuMismo()
         <<"\nQue decides hacer?"
         <<"\n1.Te escabulles lentamente sin que te vea hacia la armeria"<<"\n2.Te dejas llevar por tu enojo y lo atacas"
         <<"\n\nTu desicion: ";
-        carac.puntos += 70;
     acceso = ValidarEntrada();
     if (acceso == 1){
         armeria();
@@ -181,7 +188,7 @@ int buscarTuMismo()
             <<"\nesto hace que se de cuenta de tu presencia y te ataca tambien. Te golpea fuertemente empujandote hacia"
             <<"\nuna esquina en donde encuentras un viejo tubo oxidado, el cual tomas para defenderte. Tu enemigo se abalanza"
             <<"\nhacia ti para acabar contigo, pero logras esquivarlo y le clavas el tubo por la espalda eliminandolo"
-            <<"\n\n------------Perdiste 15 puntos de vida-------------"
+            <<"\n\n------------Perdiste 20 puntos de vida-------------"
             <<"\n\nAhora te diriges hacia la armeria en busca de algun arma para poder defenderte"
             <<"\nAntes te percatas que hay un objeto decides \n1.Recogerlo \n2.Dejarlo"
             <<"\n\nTu desicion: ";
@@ -192,10 +199,13 @@ int buscarTuMismo()
         }
         armeria();
     }
-	return 0;
 }
-
-int familia(){
+/**
+*@brief En esta función se muestra un camino en donde el jugador puede ganar o perder dependiendo de su vida.
+*@param No recibe parárametros.
+*@return Retorna void.
+*/
+void familia(){
     system("cls");
     cout<<"Los has liberado, ahora tienes que salir de ahi, pero te encuentras con un"
         <<"\nelite, luchas contra el y...";
@@ -211,14 +221,14 @@ int familia(){
             if(getch())
                 g_over();
     }
-
-
-    return 0;
 }
-
+/**
+*@brief En esta función utilizamos un template para poder administrar los diferentes finales
+*@param Resive un parametro de tipo "anfibio" que es nuestro comodin para que resive dierentes tipos de dato.
+*@return Retorna void.
+*/
 template <typename anfibio>
 void fin(anfibio final) {
-	carac.puntos += 5;
 	cout << final << endl;
 }
 /**
@@ -241,27 +251,27 @@ void prisioneros() {
 	switch (acceso) {
 	case 1:
 		system("cls");
-		fin("Haces tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n");
-		cout<<"Puntuacion: "<<endl;
+		fin("\nHaces tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n");
+		cout<<"Puntuación"<<endl;
 		fin(carac.puntos);
-		if(getch())
-                g_over();
 		break;
 	case 2:
 		system("cls");
 		fin("Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
 			"\nlas granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
 			"\nseras recordado como un heroe.\n\n");
-			cout<<"Puntuacion: "<<endl;
+		cout<<"Puntuación"<<endl;
 		fin(carac.puntos);
-		cout<<"Puntos de vida: "<<endl;
-		fin(carac.vida);
 		cout << "\n***************************************************FIN*********************************************************\n\n";
 		break;
 
 	}
 }
-
+/**
+*@brief Esta es la funcion principal, la cual contiene el menu del juego.
+*@param no recibe parametros.
+*@return regresa un entero.
+*/
 int main()
 {
 
@@ -277,17 +287,19 @@ int main()
 }
 
 /**
-*@brief Esta función se en]()carga de validar la entrada y detecta la opcion que ha sido elegida.
+*@brief Esta función se encarga de validar la entrada y detecta la opcion que ha sido elegida.
 *@param no recibe parametros.
 *@return regresa un entero, en este caso 1 si se ha seleccionado la primera opcion y 2 si fue la segunda.
 */
 int ValidarEntrada() {
 
 	string eleccionCadena;
+	int inten = 0;
 	bool key = false;
 	int eleccionEntero = 0;
 
 	do {
+        assert(inten!=5);
 		cin >> eleccionCadena;
 		int validacion = isValidInt(eleccionCadena);
 		try {
@@ -312,13 +324,16 @@ int ValidarEntrada() {
 		}
 		catch (const char* ErrorUno) {
 			cout << ErrorUno << endl;
+			inten++;
 		}
 		catch (int ErrorDos) {
 			cout << "Seleccione la opcion 1 o 2" << endl;
+			inten++;
 		}
 		catch(std::out_of_range){
-            		cout<<"Seleccione la opcion 1 o 2" << endl;
-        	}
+		    inten++;
+            cout<<"Seleccione la opcion 1 o 2" << endl;
+        }
 	} while (key != true);
 	return 0;
 }
@@ -339,10 +354,9 @@ void nave_alienigena(){
 	if (acceso == 1) {
         system("cls");
         carac.quitar_vid(30);
-		cout<<"------------Perdiste 15 puntos de vida-------------"
+		cout<<"------------Perdiste 30 puntos de vida-------------"
             <<"\nHas encontrado el lugar donde estan los prisioneros"
             <<"\n\n-Presiona cualquier tecla para seguir-";
-            carac.puntos += 90;
         if(getch())
             sala_de_prisioneros();
 	}
@@ -371,11 +385,9 @@ void sala_de_prisioneros(){
         <<"\n\nTu desicion: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
-		carac.puntos += 50;
 		familia();
 	}
 	else if(acceso==2) {
-		carac.puntos += 100;
         prisioneros();
 	}
 }
