@@ -21,9 +21,8 @@ int *vida_extra = NULL;
 int opci = 0;
 int acceso;
 void (*fun[])()={nombre,salir};
-/**
-*@struct Personaje
-*@brief Contiene la vida y los puntos del jugador.
+
+/**Esta estructura es utilizada para declarar las caracteristicas del personaje
 */
 struct Personaje{
     int vida = 100;
@@ -31,6 +30,17 @@ struct Personaje{
     void quitar_vid(int cant) { vida -= cant;}
     void aum_vid(int cant) { vida += cant;}
 }carac;
+
+/**
+*@brief En esta función utilizamos un template para poder administrar los diferentes finales
+*@param Resibe un parametro de tipo "anfibio" que es nuestro comodin para que resiba dierentes tipos de datos.
+*@return Retorna void.
+*/
+template <typename anfibio>
+void fin(anfibio final) {
+    carac.puntos += 5;
+	cout << final << endl;
+}
 /**
 *@brief Indica al usuario que la historia del juego ha terminado fatalmente.
 *@param no recibe parámetros
@@ -48,6 +58,7 @@ void g_over(){
 */
 void armeria(){
     system("cls");
+    carac.puntos += 40;
     cout<<"Sales del cuartel armado hasta las chanclas"
         <<"\nQue decides?"
         <<"\n1.Subes a tu nave" << "\n2.Subes a la nave alinigena"
@@ -55,6 +66,7 @@ void armeria(){
     acceso = ValidarEntrada();
     if (acceso == 1) {
         system("cls");
+        carac.puntos -= 90;
         cout<<"Te diriges a la base, descubren tu nave, abren fuego y mueres"
             <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
         if(getch())
@@ -129,12 +141,14 @@ void salir(){
 */
 void cuartelMilitar (){
     system("cls");
+    carac.puntos += 12;
     int choice;
     cout<<"En el cuartel militar hay un sujeto moribundo, puedes pedirle ayuda, pero su condicion podria causarte"
         <<"\nnada mas que problemas"
         <<"\nQue decides hacer?"
         <<"\n1.Ayudar al moribundo"<<   "\n2.Seguir por tu cuenta"
         <<"\n\nTu desicion: ";
+    //cin>> choice;
     acceso = ValidarEntrada();
 	if (acceso == 1) {
         system("cls");
@@ -160,6 +174,7 @@ void cuartelMilitar (){
 	}else{
         buscarTuMismo();
 	}
+
 }
 /**
 *@brief En esta función se muestra un camino en donde el jugador puede perder vida.
@@ -169,6 +184,7 @@ void cuartelMilitar (){
 void buscarTuMismo()
 {
     system("cls");
+    carac.puntos += 70;
     cout<<"Buscando por el cuartel encuentras la sala de registros con videos de lo sucedido, luego de verlos te has"
         <<"\nenterado de la cruda verdad. Una extrana raza de extraterrestres ha invadido el planeta mientras"
         <<"\nestas ausente y ha exlavizado a la mayoria de los humanos en la tierra"
@@ -210,10 +226,11 @@ void familia(){
         <<"\nelite, luchas contra el y...";
     if(vida_extra != NULL)
         carac.aum_vid(*vida_extra);
-    cout<<carac.vida;
     if(carac.vida>=70){
-        cout<<"\nlo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n"
-            <<"\n**************************FIN********************************\n\n";
+        cout<<"\nlo has podido matar, escapas de la tierra en una nave con tu familia, para no volver.\n";
+        cout<<"Puntuacion: ";
+        fin(carac.puntos);
+        cout<<"\n**************************FIN********************************\n\n";
     }else{
         cout<<"\nCon las heridas que tienes no logras vencerlo, pero tu familia ha escapado de la tierra\n"
             <<"\n\n-Presiona cualquier tecla para seguir-"<<endl;
@@ -222,45 +239,38 @@ void familia(){
     }
 }
 /**
-*@brief En esta función utilizamos un template para poder administrar los diferentes finales
-*@param Recibe un parametro de tipo "anfibio" que es nuestro comodín para que recibe dierentes tipos de datos.
-*@return Retorna void.
-*/
-template <typename anfibio>
-void fin(anfibio final) {
-	cout << final << endl;
-}
-/**
 *@brief Aquí se determina el final de la historia. Se presenta la última decisión para ganar o perder.
 *@param No recibe parámetros
 *@return Retorna void.
 */
 void prisioneros() {
 	system("cls");
-	cout << "\nDecides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste hay soldados"
+	cout<< "Decides liberar a todos los prisioneros, alertando a los alienigenas, entre las personas liberaste"
+        << "\nhay soldado entrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo"
 		<< "\nentrenados que ayudaran a enfrentarte a los alienigenas, consiguiendo armas de aliens derrotados,"
-		<< "\npara escapar del lugar, se inicia un enfrentamiento y se encuentran con el lider alien y entre todos tratan de matarlo, "
-		<< "\nal enfrentarlo muchos mueren, tu por la espalda mientras otros lo estan distrayendo, con una espada de energia lo apuñalas"
-		<< "\nen el corazon, lo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
+		<< "\npara escapar del lugar, se inicia un enfrentamiento y se encuentran con el lider alien y"
+        << "\nentre todos tratan de matarlo, al enfrentarlo muchos mueren, tu por la espalda mientras"
+		<< "\n otros lo estan distrayendo, con una espada de energia lo apuñalas en el corazo"
+		<< "\nn, lo has derrotado, pero se levanta y dice \"debiste apuntar a la cabeza\"."
 		<< "\n\n1.Con tu entrenamiento en la milicia eres capaz de enfrentarte 1 a 1 con usando la espada de energia."
 		<< "\n2.Ves en el suelo varias granadas de plasma con las cuales podrias vencerlo."
 		<< "\n\nLa decision es tuya: ";
-	int acceso=ValidarEntrada();
+    acceso = ValidarEntrada();
 
 	switch (acceso) {
 	case 1:
 		system("cls");
 		fin("\nHaces tu mejor intento pero no puedes contra el y mueres. La raza humana ha perdido.\n");
-		cout<<"Puntuación"<<endl;
-		fin(carac.puntos);
-		break;
+		if(getch())
+                g_over();
+    break;
 	case 2:
 		system("cls");
 		fin("Sabes lo que tienes que hacer. Corres hacia el interceptando todos sus ataques y te aferrar a su espalda y activas"
 			"\nlas granadas, acabando con el jefe y con todos los aliens, como un efecto colmena, sacrificandote asi por la humanidad, "
 			"\nseras recordado como un heroe.\n\n");
-		cout<<"Puntuación"<<endl;
-		fin(carac.puntos);
+		cout<<"Puntuacion: ";
+        fin(carac.puntos);
 		cout << "\n***************************************************FIN*********************************************************\n\n";
 		break;
 
@@ -343,6 +353,7 @@ int ValidarEntrada() {
 */
 void nave_alienigena(){
     system("cls");
+    carac.puntos += 90;
 	cout<<"Te diriges a la base alien y pasas desapercibido por la nave alienigena."
         <<"\nHas logrado entrar a la base y debes actuar rapido"
         <<"\nQue decides hacer?"
@@ -384,9 +395,11 @@ void sala_de_prisioneros(){
         <<"\n\nTu desicion: ";
 	acceso = ValidarEntrada();
 	if (acceso == 1) {
+        carac.puntos += 50;
 		familia();
 	}
 	else if(acceso==2) {
+	    carac.puntos += 100;
         prisioneros();
 	}
 }
@@ -418,3 +431,4 @@ bool isValidInt(string numeroEnCadena) {
 	}
 	return valido;
 }
+      
