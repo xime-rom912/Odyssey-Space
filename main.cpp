@@ -21,15 +21,16 @@ int *vida_extra = NULL;
 int opci = 0;
 int acceso;
 void (*fun[])()={nombre,salir};
-
+/**
+*@struct Personaje
+*@brief Contiene la vida y los puntos del jugador.
+*/
 struct Personaje{
     int vida = 100;
     int puntos = 0;
     void quitar_vid(int cant) { vida -= cant;}
     void aum_vid(int cant) { vida += cant;}
 }carac;
-
-
 /**
 *@brief Indica al usuario que la historia del juego ha terminado fatalmente.
 *@param no recibe parámetros
@@ -134,7 +135,6 @@ void cuartelMilitar (){
         <<"\nQue decides hacer?"
         <<"\n1.Ayudar al moribundo"<<   "\n2.Seguir por tu cuenta"
         <<"\n\nTu desicion: ";
-    //cin>> choice;
     acceso = ValidarEntrada();
 	if (acceso == 1) {
         system("cls");
@@ -160,7 +160,6 @@ void cuartelMilitar (){
 	}else{
         buscarTuMismo();
 	}
-
 }
 /**
 *@brief En esta función se muestra un camino en donde el jugador puede perder vida.
@@ -224,7 +223,7 @@ void familia(){
 }
 /**
 *@brief En esta función utilizamos un template para poder administrar los diferentes finales
-*@param Resive un parametro de tipo "anfibio" que es nuestro comodin para que resive dierentes tipos de dato.
+*@param Recibe un parametro de tipo "anfibio" que es nuestro comodín para que recibe dierentes tipos de datos.
 *@return Retorna void.
 */
 template <typename anfibio>
