@@ -6,7 +6,9 @@
 #include<thread>
 
 using namespace std;
-
+/**
+*Encabezados de subprogramas
+*/
 void nombre();
 void salir();
 void introduc(string nomb_usu);
@@ -17,11 +19,13 @@ void armeria();
 void buscarTuMismo();
 void nave_alienigena();
 void sala_de_prisioneros();
-int *vida_extra = NULL;
+void (*fun[])()={nombre,salir};
+/**
+*Declaración de variables globales
+*/
+int *vida_extra = NULL; //Puntero
 int opci = 0;
 int acceso;
-void (*fun[])()={nombre,salir};
-
 /**
 *@struct Personaje
 *@brief Contiene la vida y los puntos del jugador.
