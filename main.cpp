@@ -52,7 +52,7 @@ struct Personaje{
 }carac;
 /**
 *@brief Esta es la funcion que nos ayudara  medir el tiempo desde que el jugador selecciona 1 del menu
-*@param Resibe un parametro tipo clock_t que proporciona cantidad de tics de reloj transcurridos 
+*@param Recibe un parametro tipo clock_t que proporciona cantidad de tics de reloj transcurridos 
 *@return Retorna void.
 */
 void reloj(clock_t t)
