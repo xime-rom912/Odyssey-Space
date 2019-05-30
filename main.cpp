@@ -62,7 +62,7 @@ void reloj(clock_t t)
 }
 /**
 *@brief En esta función utilizamos un template para poder administrar los diferentes finales
-*@param Resibe un parametro de tipo "anfibio" que es nuestro comodin para que resiba dierentes tipos de datos.
+*@param Recibe un parametro de tipo "anfibio" que es nuestro comodin para que resiba dierentes tipos de datos.
 *@return Retorna void.
 */
 template <typename anfibio>
